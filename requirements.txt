@@ -1,0 +1,11 @@
+# Core dependencies
+streamlit
+PyPDF2
+requests
+
+# Optional but recommended
+chromadb==0.4.24  # For persistent vector storage
+ollama  # For local LLM and embeddings
+
+# Document processing extras (optional)
+unstructured[pdf]  # Enhanced PDF processing
