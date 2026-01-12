@@ -1,0 +1,19 @@
+2026-01-11 19:15:02,569 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_191502.log
+2026-01-11 19:15:06,448 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_191506.log
+2026-01-11 19:15:06,825 - DEBUG - start:359 - Starting component System
+2026-01-11 19:15:06,825 - DEBUG - start:359 - Starting component Posthog
+2026-01-11 19:15:25,830 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_191525.log
+2026-01-11 19:15:34,546 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_191534.log
+2026-01-11 19:15:39,002 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_191539.log
+2026-01-11 19:15:47,566 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_191547.log
+2026-01-11 19:15:51,562 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_191551.log
+2026-01-11 19:16:01,140 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_191601.log
+2026-01-11 19:16:01,202 - INFO - audio_processing_page:296 - Starting audio processing for file: single.wav
+2026-01-11 19:16:01,204 - DEBUG - audio_processing_page:297 - File size: 352078 bytes
+2026-01-11 19:16:01,205 - DEBUG - audio_processing_page:298 - Collection name: AuditDocs
+2026-01-11 19:16:01,205 - DEBUG - audio_processing_page:299 - Language: en-US
+2026-01-11 19:16:01,208 - INFO - audio_processing_page:316 - Audio file saved to: C:\Users\navinp\AppData\Local\Temp\tmpj_flzdyz.wav
+2026-01-11 19:16:01,228 - INFO - audio_processing_page:324 - Audio split into 1 chunks
+2026-01-11 19:16:01,230 - DEBUG - audio_processing_page:335 - Transcribing chunk 1/1
+2026-01-11 19:16:02,589 - ERROR - audio_processing_page:340 - Failed to transcribe chunk 1: Speech recognition could not understand the audio
+2026-01-11 19:16:02,591 - DEBUG - audio_processing_page:445 - Cleaned up temp file: C:\Users\navinp\AppData\Local\Temp\tmpj_flzdyz.wav

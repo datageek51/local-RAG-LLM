@@ -2,6 +2,11 @@ import streamlit as st
 from typing import List, Dict, Any, Tuple
 import ollama
 from Utilities import CHROMA_PATH, COLLECTION_NAME, EMBEDDING_MODEL, LLM_MODEL
+import logging
+import os
+
+# Set up logging for chat page
+logger = logging.getLogger(__name__)
 
 
 # Removed compatibility wrapper to avoid an extra function; calls to Streamlit rerun
@@ -264,6 +269,21 @@ def chat_page(collection=None):
         f"🤖 Chat Model: **{current_llm}** | "
         f"{'✅' if meta.get('uses_content_hash') else '❌'} Content-hash IDs"
     )
+    
+    # Debug: Show collection summary
+    with st.expander("📊 Collection Debug Info", expanded=False):
+        st.write(f"Collection name: {meta['name']}")
+        st.write(f"Total documents: {meta['count']}")
+        st.write(f"Embedding function: {meta['embedding_function']}")
+        if meta['count'] > 0:
+            st.write("Sample documents (first 3):")
+            try:
+                samples = active_collection.get(limit=3)
+                if samples and 'documents' in samples:
+                    for idx, doc in enumerate(samples['documents'][:3]):
+                        st.text(f"Doc {idx + 1} preview: {doc[:200]}...")
+            except Exception as e:
+                st.error(f"Could not fetch sample documents: {e}")
 
     # Display chat history
     for message in st.session_state.messages:
@@ -272,6 +292,9 @@ def chat_page(collection=None):
 
     # Chat input
     if prompt := st.chat_input("Ask a question about your documents..."):
+        logger.info(f"User query: {prompt}")
+        logger.info(f"Active collection: {active_collection.name if hasattr(active_collection, 'name') else 'unknown'}")
+        
         # Add user message to chat history
         st.session_state.messages.append({"role": "user", "content": prompt})
         
@@ -282,24 +305,39 @@ def chat_page(collection=None):
         # Get relevant context via ChromaDB
         with st.spinner("Searching documents..."):
             try:
+                logger.debug("Starting document search...")
+                
                 # ensure we have a proper collection object (some chroma APIs return metadata dicts)
                 if not hasattr(active_collection, 'query') and client is not None:
+                    logger.debug("Collection doesn't have query method, fetching from client")
                     try:
                         # try to fetch a real collection object by name
                         active_collection = client.get_collection(active_collection.name)
-                    except Exception:
+                        logger.debug(f"Fetched collection: {active_collection.name}")
+                    except Exception as e:
+                        logger.error(f"Failed to fetch collection: {e}")
                         pass
 
                 # use the active_collection selected in the UI (may differ from the optional function param)
+                logger.debug(f"Querying collection with: {prompt[:100]}...")
                 results = active_collection.query(
                     query_texts=[prompt],
-                    n_results=3  # adjust based on needs
+                    n_results=4  # adjust based on needs
                 )
+                
+                logger.debug(f"Query results type: {type(results)}")
+                logger.debug(f"Query results keys: {results.keys() if isinstance(results, dict) else 'not a dict'}")
+                
+                # Log distances/similarity scores
+                if isinstance(results, dict) and 'distances' in results:
+                    logger.debug(f"Similarity distances: {results['distances']}")
 
                 # results may contain 'documents' or 'metadatas' depending on chroma version
                 docs = []
                 if isinstance(results, dict):
                     docs = results.get('documents') or results.get('results') or []
+                    logger.debug(f"Retrieved docs: {len(docs)} items")
+                    
                 # normalize to a list of strings
                 context_items = []
                 if docs:
@@ -307,11 +345,34 @@ def chat_page(collection=None):
                     first = docs[0]
                     if isinstance(first, list):
                         context_items = [str(d) for d in first if d]
+                        logger.debug(f"Extracted {len(context_items)} context items from nested list")
+                        # Log each retrieved document snippet
+                        for idx, item in enumerate(context_items):
+                            logger.debug(f"  Context item {idx + 1} ({len(item)} chars): {item[:500]}...")
                     else:
                         context_items = [str(first)]
+                        logger.debug(f"Extracted 1 context item")
+                    
+                    # Log first context item preview
+                    if context_items:
+                        logger.debug(f"First context item preview: {context_items[0][:500]}...")
+                else:
+                    logger.warning("No documents retrieved from query")
 
                 context = "\n---\n".join(context_items) if context_items else ""
+                logger.info(f"Final context length: {len(context)} characters, {len(context_items)} items")
+                
+                if not context:
+                    logger.warning("Context is empty - no relevant documents found")
+                    
+                # Show retrieved context in debug expander
+                with st.expander(f"🔍 Retrieved Context ({len(context_items)} items, {len(context)} chars)", expanded=False):
+                    for idx, item in enumerate(context_items):
+                        st.write(f"**Document {idx + 1}:**")
+                        st.text_area(f"doc_{idx}", item, height=100, disabled=True)
+                    
             except Exception as e:
+                logger.error(f"Failed to query documents: {str(e)}", exc_info=True)
                 st.error(f"Failed to query documents: {e}")
                 return
 
@@ -330,8 +391,12 @@ User question: {prompt}
 
 Answer:"""
                 
+                logger.debug(f"RAG prompt length: {len(rag_prompt)} characters")
+                logger.debug(f"Context included in prompt: {len(context)} characters")
+                
                 # Use the model selected in the UI, or fall back to environment/default
                 model_name = st.session_state.get('selected_llm_model', os.environ.get('LLM_MODEL', LLM_MODEL))
+                logger.info(f"Using LLM model: {model_name}")
                 
                 # Build a list of models to try: primary + optional fallbacks from env + conservative defaults
                 fallbacks_env = os.environ.get("LLM_FALLBACKS", "")
@@ -352,6 +417,7 @@ Answer:"""
 
                 for m in models_to_try:
                     try:
+                        logger.debug(f"Trying model: {m}")
                         response = ollama.chat(
                             model=m,
                             messages=[{"role": "user", "content": rag_prompt}]
@@ -366,6 +432,9 @@ Answer:"""
                             except Exception:
                                 answer = str(response)
 
+                        logger.info(f"Successfully got response from model {m}, length: {len(answer)} chars")
+                        logger.debug(f"Response preview: {answer[:200]}...")
+                        
                         # On success, append and display
                         st.session_state.messages.append({"role": "assistant", "content": answer})
                         with st.chat_message("assistant"):
@@ -376,6 +445,7 @@ Answer:"""
                         break
 
                     except Exception as e:
+                        logger.error(f"Model {m} failed: {str(e)}")
                         last_exc = e
                         msg = str(e).lower()
                         # If the error looks memory-related, try next fallback model

@@ -1,0 +1,285 @@
+2026-01-11 20:23:13,492 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_202313.log
+2026-01-11 20:23:18,593 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_202318.log
+2026-01-11 20:23:18,837 - DEBUG - start:359 - Starting component System
+2026-01-11 20:23:18,837 - DEBUG - start:359 - Starting component Posthog
+2026-01-11 20:23:23,122 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_202323.log
+2026-01-11 20:23:25,515 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_202325.log
+2026-01-11 20:23:25,671 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_202325.log
+2026-01-11 20:23:29,094 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_202329.log
+2026-01-11 20:23:47,671 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_202347.log
+2026-01-11 20:24:03,416 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_202403.log
+2026-01-11 20:24:09,377 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_202409.log
+2026-01-11 20:24:19,857 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_202419.log
+2026-01-11 20:24:23,498 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_202423.log
+2026-01-11 20:24:23,564 - INFO - document_processing_page:252 - Starting text extraction for file: QP-1003-TRAINING-SOP.pdf
+2026-01-11 20:24:23,565 - DEBUG - document_processing_page:253 - File size: 227281 bytes
+2026-01-11 20:24:23,565 - DEBUG - document_processing_page:254 - Collection name: CompanyAudit
+2026-01-11 20:24:23,565 - DEBUG - document_processing_page:255 - Metadata - Source: Company SOP Training Policy, Category: QP Docs
+2026-01-11 20:24:23,566 - DEBUG - document_processing_page:260 - File pointer reset to beginning before reading
+2026-01-11 20:24:23,574 - INFO - document_processing_page:264 - PDF loaded. Total pages: 3
+2026-01-11 20:24:23,575 - DEBUG - document_processing_page:269 - Processing page 1/3
+2026-01-11 20:24:23,694 - DEBUG - document_processing_page:273 - Page 1: extracted 1815 characters
+2026-01-11 20:24:23,695 - DEBUG - document_processing_page:277 - Page 1 text preview: COMPANY LOGO Title:  PROCEDURE  FOR TRAINING  AND  INTERNAL  COMMUNICATION  
+ Doc #: QP-1003 Rev #: ...
+2026-01-11 20:24:23,695 - DEBUG - document_processing_page:281 - Page 1: created 10 chunks
+2026-01-11 20:24:23,695 - DEBUG - document_processing_page:269 - Processing page 2/3
+2026-01-11 20:24:23,776 - DEBUG - document_processing_page:273 - Page 2: extracted 2418 characters
+2026-01-11 20:24:23,777 - DEBUG - document_processing_page:277 - Page 2 text preview: COMPANY LOGO Title:  PROCEDURE  FOR TRAINING  AND  INTERNAL  COMMUNICATION  
+ Doc #: QP-1003 Rev #: ...
+2026-01-11 20:24:23,777 - DEBUG - document_processing_page:281 - Page 2: created 13 chunks
+2026-01-11 20:24:23,777 - DEBUG - document_processing_page:269 - Processing page 3/3
+2026-01-11 20:24:23,800 - DEBUG - document_processing_page:273 - Page 3: extracted 690 characters
+2026-01-11 20:24:23,801 - DEBUG - document_processing_page:277 - Page 3 text preview: COMPANY LOGO Title:  PROCEDURE  FOR TRAINING  AND  INTERNAL  COMMUNICATION  
+ Doc #: QP-1003 Rev #: ...
+2026-01-11 20:24:23,801 - DEBUG - document_processing_page:281 - Page 3: created 4 chunks
+2026-01-11 20:24:23,801 - INFO - document_processing_page:288 - Text extraction complete. Total chunks created: 27
+2026-01-11 20:24:23,802 - INFO - document_processing_page:296 - Starting ChromaDB processing for 27 chunks
+2026-01-11 20:24:23,804 - DEBUG - document_processing_page:317 - Document metadata: {'source': 'Company SOP Training Policy', 'category': 'QP Docs'}
+2026-01-11 20:24:24,198 - DEBUG - model:227 - WARNING: No ONNX providers provided, defaulting to available providers: ['AzureExecutionProvider', 'CPUExecutionProvider']
+2026-01-11 20:24:25,408 - DEBUG - update_progress:306 - Progress: 10/27 chunks processed
+2026-01-11 20:24:25,451 - DEBUG - model:227 - WARNING: No ONNX providers provided, defaulting to available providers: ['AzureExecutionProvider', 'CPUExecutionProvider']
+2026-01-11 20:24:26,303 - DEBUG - update_progress:306 - Progress: 20/27 chunks processed
+2026-01-11 20:24:26,377 - DEBUG - model:227 - WARNING: No ONNX providers provided, defaulting to available providers: ['AzureExecutionProvider', 'CPUExecutionProvider']
+2026-01-11 20:24:27,174 - DEBUG - update_progress:306 - Progress: 27/27 chunks processed
+2026-01-11 20:24:27,175 - INFO - document_processing_page:326 - ChromaDB processing complete. Collection: CompanyAudit
+2026-01-11 20:24:27,178 - DEBUG - document_processing_page:334 - Session state updated with collection and doc_processed flag
+2026-01-11 20:24:30,188 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_202430.log
+2026-01-11 20:24:33,455 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_202433.log
+2026-01-11 20:24:41,123 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_202441.log
+2026-01-11 20:24:43,867 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_202443.log
+2026-01-11 20:24:51,091 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_202451.log
+2026-01-11 20:25:10,224 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_202510.log
+2026-01-11 20:25:10,300 - INFO - chat_page:295 - User query: Summarize the documents and provide me with audit recommendation
+2026-01-11 20:25:10,302 - INFO - chat_page:296 - Active collection: CompanyAudit
+2026-01-11 20:25:10,307 - DEBUG - chat_page:308 - Starting document search...
+2026-01-11 20:25:10,307 - DEBUG - chat_page:322 - Querying collection with: Summarize the documents and provide me with audit recommendation...
+2026-01-11 20:25:10,343 - DEBUG - model:227 - WARNING: No ONNX providers provided, defaulting to available providers: ['AzureExecutionProvider', 'CPUExecutionProvider']
+2026-01-11 20:25:10,868 - DEBUG - chat_page:328 - Query results type: <class 'dict'>
+2026-01-11 20:25:10,868 - DEBUG - chat_page:329 - Query results keys: dict_keys(['ids', 'embeddings', 'documents', 'uris', 'included', 'data', 'metadatas', 'distances'])
+2026-01-11 20:25:10,869 - DEBUG - chat_page:333 - Similarity distances: [[1.2483935356140137, 1.3275656700134277, 1.4057973623275757, 1.4216490983963013]]
+2026-01-11 20:25:10,869 - DEBUG - chat_page:339 - Retrieved docs: 1 items
+2026-01-11 20:25:10,870 - DEBUG - chat_page:348 - Extracted 4 context items from nested list
+2026-01-11 20:25:10,870 - DEBUG - chat_page:351 -   Context item 1 (200 chars): on  which  includes  the following  topics  (at a minimum):  
+3.1. Quality  policy  
+3.2. Current  quality  objectives  
+3.3. Relevant  procedures  (as applicable  to the activities  of the employee) ...
+2026-01-11 20:25:10,870 - DEBUG - chat_page:351 -   Context item 2 (200 chars):  and Preventive  Action)  are carried  out after  
+the audit,  and as needed.  Training  records  are attached  to such  corrective  
+actions.   
+ 
+NOTE:  Where  training  is identified  as a result  ...
+2026-01-11 20:25:10,871 - DEBUG - chat_page:351 -   Context item 3 (200 chars): 
+9. Training  to documents  is provided  per Document  Control  Procedure  (all “users” 
+on the distribution  matrix  receive  training  for new  or revised  documents  per QP-
+1001).  Training  recor...
+2026-01-11 20:25:10,871 - DEBUG - chat_page:351 -   Context item 4 (200 chars): ds  are submitted  to Document  Control  Administrator  for 
+filing.   
+ 
+10. Communication  and required  training  associated  with  corrective  actions  (Ref.  
+QP-1005,  Procedure  for Corrective ...
+2026-01-11 20:25:10,871 - DEBUG - chat_page:358 - First context item preview: on  which  includes  the following  topics  (at a minimum):  
+3.1. Quality  policy  
+3.2. Current  quality  objectives  
+3.3. Relevant  procedures  (as applicable  to the activities  of the employee) ...
+2026-01-11 20:25:10,872 - INFO - chat_page:363 - Final context length: 815 characters, 4 items
+2026-01-11 20:25:10,878 - DEBUG - chat_page:394 - RAG prompt length: 1133 characters
+2026-01-11 20:25:10,879 - DEBUG - chat_page:395 - Context included in prompt: 815 characters
+2026-01-11 20:25:10,880 - INFO - chat_page:399 - Using LLM model: llama3.2:3b
+2026-01-11 20:25:10,880 - DEBUG - chat_page:420 - Trying model: llama3.2:3b
+2026-01-11 20:25:10,881 - DEBUG - trace:47 - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2026-01-11 20:25:10,883 - DEBUG - trace:47 - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000027F20E00830>
+2026-01-11 20:25:10,883 - DEBUG - trace:47 - send_request_headers.started request=<Request [b'POST']>
+2026-01-11 20:25:10,885 - DEBUG - trace:47 - send_request_headers.complete
+2026-01-11 20:25:10,886 - DEBUG - trace:47 - send_request_body.started request=<Request [b'POST']>
+2026-01-11 20:25:10,887 - DEBUG - trace:47 - send_request_body.complete
+2026-01-11 20:25:10,887 - DEBUG - trace:47 - receive_response_headers.started request=<Request [b'POST']>
+2026-01-11 20:26:05,308 - DEBUG - trace:47 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Mon, 12 Jan 2026 01:26:05 GMT'), (b'Content-Length', b'552')])
+2026-01-11 20:26:05,333 - INFO - _send_single_request:1025 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-11 20:26:05,337 - DEBUG - trace:47 - receive_response_body.started request=<Request [b'POST']>
+2026-01-11 20:26:05,339 - DEBUG - trace:47 - receive_response_body.complete
+2026-01-11 20:26:05,340 - DEBUG - trace:47 - response_closed.started
+2026-01-11 20:26:05,341 - DEBUG - trace:47 - response_closed.complete
+2026-01-11 20:26:05,355 - INFO - chat_page:435 - Successfully got response from model llama3.2:3b, length: 249 chars
+2026-01-11 20:26:05,356 - DEBUG - chat_page:436 - Response preview: I don't have enough context to summarize the documents or provide an audit recommendation. Please provide more information about the Quality Policy, current quality objectives, relevant procedures, an...
+2026-01-11 20:27:33,195 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_202733.log
+2026-01-11 20:27:33,583 - INFO - chat_page:295 - User query: look into the document and provide further context for audit training
+2026-01-11 20:27:33,583 - INFO - chat_page:296 - Active collection: CompanyAudit
+2026-01-11 20:27:33,586 - DEBUG - chat_page:308 - Starting document search...
+2026-01-11 20:27:33,586 - DEBUG - chat_page:322 - Querying collection with: look into the document and provide further context for audit training...
+2026-01-11 20:27:33,692 - DEBUG - model:227 - WARNING: No ONNX providers provided, defaulting to available providers: ['AzureExecutionProvider', 'CPUExecutionProvider']
+2026-01-11 20:27:34,253 - DEBUG - chat_page:328 - Query results type: <class 'dict'>
+2026-01-11 20:27:34,253 - DEBUG - chat_page:329 - Query results keys: dict_keys(['ids', 'embeddings', 'documents', 'uris', 'included', 'data', 'metadatas', 'distances'])
+2026-01-11 20:27:34,253 - DEBUG - chat_page:333 - Similarity distances: [[0.6488827466964722, 0.9873964190483093, 1.0669996738433838, 1.0922224521636963]]
+2026-01-11 20:27:34,254 - DEBUG - chat_page:339 - Retrieved docs: 1 items
+2026-01-11 20:27:34,255 - DEBUG - chat_page:348 - Extracted 4 context items from nested list
+2026-01-11 20:27:34,255 - DEBUG - chat_page:351 -   Context item 1 (200 chars):  and Preventive  Action)  are carried  out after  
+the audit,  and as needed.  Training  records  are attached  to such  corrective  
+actions.   
+ 
+NOTE:  Where  training  is identified  as a result  ...
+2026-01-11 20:27:34,255 - DEBUG - chat_page:351 -   Context item 2 (200 chars): xisting  employees,  an annual  review  of training  needs  is conducted  by 
+department  head  or the direct  manager,  as applicable.  If new  training  is 
+identified,  the same  is documented  usi...
+2026-01-11 20:27:34,256 - DEBUG - chat_page:351 -   Context item 3 (200 chars):  
+4.3. Applicable  Job description  
+4.4. Individual  training  records  (Ref.  form  QF-007)  
+4.5. Job acceptance  document  (e.g.  offer  letter)  
+4.6. Benefits  information  (401K,  Health  insur...
+2026-01-11 20:27:34,256 - DEBUG - chat_page:351 -   Context item 4 (200 chars): the employees,  and maintain  relevant  training  records.  
+ 
+2.0 SCOPE  
+ 
+ This procedure  applies  to all employees,  contractors,  part-time  and temporary  employees  
+that affect  the product  ...
+2026-01-11 20:27:34,256 - DEBUG - chat_page:358 - First context item preview:  and Preventive  Action)  are carried  out after  
+the audit,  and as needed.  Training  records  are attached  to such  corrective  
+actions.   
+ 
+NOTE:  Where  training  is identified  as a result  ...
+2026-01-11 20:27:34,256 - INFO - chat_page:363 - Final context length: 815 characters, 4 items
+2026-01-11 20:27:34,262 - DEBUG - chat_page:394 - RAG prompt length: 1138 characters
+2026-01-11 20:27:34,262 - DEBUG - chat_page:395 - Context included in prompt: 815 characters
+2026-01-11 20:27:34,263 - INFO - chat_page:399 - Using LLM model: llama3.2:3b
+2026-01-11 20:27:34,263 - DEBUG - chat_page:420 - Trying model: llama3.2:3b
+2026-01-11 20:27:34,293 - DEBUG - trace:47 - close.started
+2026-01-11 20:27:34,294 - DEBUG - trace:47 - close.complete
+2026-01-11 20:27:34,294 - DEBUG - trace:47 - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2026-01-11 20:27:34,298 - DEBUG - trace:47 - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000027F3003D090>
+2026-01-11 20:27:34,299 - DEBUG - trace:47 - send_request_headers.started request=<Request [b'POST']>
+2026-01-11 20:27:34,301 - DEBUG - trace:47 - send_request_headers.complete
+2026-01-11 20:27:34,303 - DEBUG - trace:47 - send_request_body.started request=<Request [b'POST']>
+2026-01-11 20:27:34,303 - DEBUG - trace:47 - send_request_body.complete
+2026-01-11 20:27:34,304 - DEBUG - trace:47 - receive_response_headers.started request=<Request [b'POST']>
+2026-01-11 20:27:48,864 - DEBUG - trace:47 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Mon, 12 Jan 2026 01:27:48 GMT'), (b'Content-Length', b'475')])
+2026-01-11 20:27:48,864 - INFO - _send_single_request:1025 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-11 20:27:48,865 - DEBUG - trace:47 - receive_response_body.started request=<Request [b'POST']>
+2026-01-11 20:27:48,865 - DEBUG - trace:47 - receive_response_body.complete
+2026-01-11 20:27:48,866 - DEBUG - trace:47 - response_closed.started
+2026-01-11 20:27:48,866 - DEBUG - trace:47 - response_closed.complete
+2026-01-11 20:27:48,867 - INFO - chat_page:435 - Successfully got response from model llama3.2:3b, length: 173 chars
+2026-01-11 20:27:48,867 - DEBUG - chat_page:436 - Response preview: I don't have enough context about what specific part of the document you'd like me to "look into" regarding audit training. Could you please clarify or provide more details?...
+2026-01-11 20:28:12,776 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_202812.log
+2026-01-11 20:28:12,928 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_202812.log
+2026-01-11 20:28:42,500 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_202842.log
+2026-01-11 20:28:53,651 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_202853.log
+2026-01-11 20:28:53,726 - INFO - chat_page:295 - User query: what is the arson policy
+2026-01-11 20:28:53,726 - INFO - chat_page:296 - Active collection: InsuranceDemo1
+2026-01-11 20:28:53,731 - DEBUG - chat_page:308 - Starting document search...
+2026-01-11 20:28:53,732 - DEBUG - chat_page:322 - Querying collection with: what is the arson policy...
+2026-01-11 20:28:53,771 - DEBUG - model:227 - WARNING: No ONNX providers provided, defaulting to available providers: ['AzureExecutionProvider', 'CPUExecutionProvider']
+2026-01-11 20:28:54,135 - DEBUG - chat_page:328 - Query results type: <class 'dict'>
+2026-01-11 20:28:54,135 - DEBUG - chat_page:329 - Query results keys: dict_keys(['ids', 'embeddings', 'documents', 'uris', 'included', 'data', 'metadatas', 'distances'])
+2026-01-11 20:28:54,135 - DEBUG - chat_page:333 - Similarity distances: [[0.9721708297729492, 0.9824483394622803, 1.0345230102539062, 1.0513958930969238]]
+2026-01-11 20:28:54,136 - DEBUG - chat_page:339 - Retrieved docs: 1 items
+2026-01-11 20:28:54,136 - DEBUG - chat_page:348 - Extracted 4 context items from nested list
+2026-01-11 20:28:54,136 - DEBUG - chat_page:351 -   Context item 1 (200 chars): s at the  
+residence premises.  
+ 
+However, we will cover sudden and accidental 
+direct physical loss caused by actions of civil, 
+governmental or military authority to prevent the 
+spread of fire.  
+...
+2026-01-11 20:28:54,137 - DEBUG - chat_page:351 -   Context item 2 (200 chars):   not increase  the limit of liability applying to the damaged  property.  
+ 
+9. Arson  Reward  
+We will pay up to $5,000 for information leading to an arson conviction in connection with a fire loss ...
+2026-01-11 20:28:54,137 - DEBUG - chat_page:351 -   Context item 3 (200 chars): ured  person. We  will not apply 
+this exclusion if the property damage is caused by fire, explosion or  smoke.  
+ 
+13. We do not cover any liability an  insured person assumes arising out of any cont...
+2026-01-11 20:28:54,138 - DEBUG - chat_page:351 -   Context item 4 (200 chars): ies only to sudden and accidental direct 
+physical loss caused by fire or lightning, explosion, riot 
+or civil commotion, aircraft, vehicles not owned by an 
+occupant of the residence premises, vandal...
+2026-01-11 20:28:54,138 - DEBUG - chat_page:358 - First context item preview: s at the  
+residence premises.  
+ 
+However, we will cover sudden and accidental 
+direct physical loss caused by actions of civil, 
+governmental or military authority to prevent the 
+spread of fire.  
+...
+2026-01-11 20:28:54,138 - INFO - chat_page:363 - Final context length: 815 characters, 4 items
+2026-01-11 20:28:54,147 - DEBUG - chat_page:394 - RAG prompt length: 1093 characters
+2026-01-11 20:28:54,147 - DEBUG - chat_page:395 - Context included in prompt: 815 characters
+2026-01-11 20:28:54,148 - INFO - chat_page:399 - Using LLM model: llama3.2:3b
+2026-01-11 20:28:54,148 - DEBUG - chat_page:420 - Trying model: llama3.2:3b
+2026-01-11 20:28:54,149 - DEBUG - trace:47 - close.started
+2026-01-11 20:28:54,149 - DEBUG - trace:47 - close.complete
+2026-01-11 20:28:54,150 - DEBUG - trace:47 - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2026-01-11 20:28:54,151 - DEBUG - trace:47 - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000027F3003DA90>
+2026-01-11 20:28:54,151 - DEBUG - trace:47 - send_request_headers.started request=<Request [b'POST']>
+2026-01-11 20:28:54,152 - DEBUG - trace:47 - send_request_headers.complete
+2026-01-11 20:28:54,153 - DEBUG - trace:47 - send_request_body.started request=<Request [b'POST']>
+2026-01-11 20:28:54,155 - DEBUG - trace:47 - send_request_body.complete
+2026-01-11 20:28:54,155 - DEBUG - trace:47 - receive_response_headers.started request=<Request [b'POST']>
+2026-01-11 20:29:01,388 - DEBUG - trace:47 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Mon, 12 Jan 2026 01:29:01 GMT'), (b'Content-Length', b'366')])
+2026-01-11 20:29:01,389 - INFO - _send_single_request:1025 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-11 20:29:01,390 - DEBUG - trace:47 - receive_response_body.started request=<Request [b'POST']>
+2026-01-11 20:29:01,390 - DEBUG - trace:47 - receive_response_body.complete
+2026-01-11 20:29:01,391 - DEBUG - trace:47 - response_closed.started
+2026-01-11 20:29:01,391 - DEBUG - trace:47 - response_closed.complete
+2026-01-11 20:29:01,392 - INFO - chat_page:435 - Successfully got response from model llama3.2:3b, length: 67 chars
+2026-01-11 20:29:01,392 - DEBUG - chat_page:436 - Response preview: We pay up to $5,000 for information leading to an arson conviction....
+2026-01-11 20:30:05,320 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_203005.log
+2026-01-11 20:30:05,492 - INFO - chat_page:295 - User query: can you elaborate on the arson policy
+2026-01-11 20:30:05,493 - INFO - chat_page:296 - Active collection: InsuranceDemo1
+2026-01-11 20:30:05,496 - DEBUG - chat_page:308 - Starting document search...
+2026-01-11 20:30:05,497 - DEBUG - chat_page:322 - Querying collection with: can you elaborate on the arson policy...
+2026-01-11 20:30:05,532 - DEBUG - model:227 - WARNING: No ONNX providers provided, defaulting to available providers: ['AzureExecutionProvider', 'CPUExecutionProvider']
+2026-01-11 20:30:05,774 - DEBUG - chat_page:328 - Query results type: <class 'dict'>
+2026-01-11 20:30:05,775 - DEBUG - chat_page:329 - Query results keys: dict_keys(['ids', 'embeddings', 'documents', 'uris', 'included', 'data', 'metadatas', 'distances'])
+2026-01-11 20:30:05,775 - DEBUG - chat_page:333 - Similarity distances: [[0.8578209280967712, 0.920050859451294, 0.9427180290222168, 0.9463237524032593]]
+2026-01-11 20:30:05,775 - DEBUG - chat_page:339 - Retrieved docs: 1 items
+2026-01-11 20:30:05,775 - DEBUG - chat_page:348 - Extracted 4 context items from nested list
+2026-01-11 20:30:05,776 - DEBUG - chat_page:351 -   Context item 1 (200 chars): s at the  
+residence premises.  
+ 
+However, we will cover sudden and accidental 
+direct physical loss caused by actions of civil, 
+governmental or military authority to prevent the 
+spread of fire.  
+...
+2026-01-11 20:30:05,776 - DEBUG - chat_page:351 -   Context item 2 (200 chars): ies only to sudden and accidental direct 
+physical loss caused by fire or lightning, explosion, riot 
+or civil commotion, aircraft, vehicles not owned by an 
+occupant of the residence premises, vandal...
+2026-01-11 20:30:05,776 - DEBUG - chat_page:351 -   Context item 3 (200 chars): ured  person. We  will not apply 
+this exclusion if the property damage is caused by fire, explosion or  smoke.  
+ 
+13. We do not cover any liability an  insured person assumes arising out of any cont...
+2026-01-11 20:30:05,777 - DEBUG - chat_page:351 -   Context item 4 (200 chars):   not increase  the limit of liability applying to the damaged  property.  
+ 
+9. Arson  Reward  
+We will pay up to $5,000 for information leading to an arson conviction in connection with a fire loss ...
+2026-01-11 20:30:05,777 - DEBUG - chat_page:358 - First context item preview: s at the  
+residence premises.  
+ 
+However, we will cover sudden and accidental 
+direct physical loss caused by actions of civil, 
+governmental or military authority to prevent the 
+spread of fire.  
+...
+2026-01-11 20:30:05,777 - INFO - chat_page:363 - Final context length: 815 characters, 4 items
+2026-01-11 20:30:05,783 - DEBUG - chat_page:394 - RAG prompt length: 1106 characters
+2026-01-11 20:30:05,783 - DEBUG - chat_page:395 - Context included in prompt: 815 characters
+2026-01-11 20:30:05,783 - INFO - chat_page:399 - Using LLM model: llama3.2:3b
+2026-01-11 20:30:05,784 - DEBUG - chat_page:420 - Trying model: llama3.2:3b
+2026-01-11 20:30:05,785 - DEBUG - trace:47 - close.started
+2026-01-11 20:30:05,785 - DEBUG - trace:47 - close.complete
+2026-01-11 20:30:05,786 - DEBUG - trace:47 - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2026-01-11 20:30:05,788 - DEBUG - trace:47 - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000027F2E0FA3F0>
+2026-01-11 20:30:05,788 - DEBUG - trace:47 - send_request_headers.started request=<Request [b'POST']>
+2026-01-11 20:30:05,789 - DEBUG - trace:47 - send_request_headers.complete
+2026-01-11 20:30:05,790 - DEBUG - trace:47 - send_request_body.started request=<Request [b'POST']>
+2026-01-11 20:30:05,791 - DEBUG - trace:47 - send_request_body.complete
+2026-01-11 20:30:05,791 - DEBUG - trace:47 - receive_response_headers.started request=<Request [b'POST']>
+2026-01-11 20:30:13,629 - DEBUG - trace:47 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Mon, 12 Jan 2026 01:30:13 GMT'), (b'Content-Length', b'477')])
+2026-01-11 20:30:13,630 - INFO - _send_single_request:1025 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-11 20:30:13,630 - DEBUG - trace:47 - receive_response_body.started request=<Request [b'POST']>
+2026-01-11 20:30:13,630 - DEBUG - trace:47 - receive_response_body.complete
+2026-01-11 20:30:13,631 - DEBUG - trace:47 - response_closed.started
+2026-01-11 20:30:13,631 - DEBUG - trace:47 - response_closed.complete
+2026-01-11 20:30:13,632 - INFO - chat_page:435 - Successfully got response from model llama3.2:3b, length: 178 chars
+2026-01-11 20:30:13,632 - DEBUG - chat_page:436 - Response preview: The arson reward policy pays up to $5,000 for information leading to an arson conviction, but does not cover liability for damage caused by the act of providing such information....

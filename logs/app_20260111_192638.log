@@ -1,0 +1,140 @@
+2026-01-11 19:26:38,256 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_192638.log
+2026-01-11 19:26:41,274 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_192641.log
+2026-01-11 19:26:41,639 - DEBUG - start:359 - Starting component System
+2026-01-11 19:26:41,641 - DEBUG - start:359 - Starting component Posthog
+2026-01-11 19:26:49,322 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_192649.log
+2026-01-11 19:27:00,847 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_192700.log
+2026-01-11 19:27:04,451 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_192704.log
+2026-01-11 19:27:12,403 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_192712.log
+2026-01-11 19:27:17,396 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_192717.log
+2026-01-11 19:27:20,038 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_192720.log
+2026-01-11 19:27:20,103 - INFO - audio_processing_page:296 - Starting audio processing for file: sample_customer_call.wav
+2026-01-11 19:27:20,104 - DEBUG - audio_processing_page:297 - File size: 685100 bytes
+2026-01-11 19:27:20,104 - DEBUG - audio_processing_page:298 - Collection name: InsuranceDemo1
+2026-01-11 19:27:20,104 - DEBUG - audio_processing_page:299 - Language: en-US
+2026-01-11 19:27:20,107 - INFO - audio_processing_page:316 - Audio file saved to: C:\Users\navinp\AppData\Local\Temp\tmpbalwl9qo.wav
+2026-01-11 19:27:20,121 - INFO - audio_processing_page:324 - Audio split into 1 chunks
+2026-01-11 19:27:20,122 - DEBUG - audio_processing_page:335 - Transcribing chunk 1/1
+2026-01-11 19:27:21,406 - DEBUG - audio_processing_page:338 - Chunk 1 transcribed: 98 characters
+2026-01-11 19:27:21,407 - INFO - audio_processing_page:351 - Transcription complete. Total length: 98 characters
+2026-01-11 19:27:21,409 - INFO - audio_processing_page:360 - Created 1 text chunks for storage
+2026-01-11 19:27:21,410 - DEBUG - audio_processing_page:373 - Audio metadata: {'source': 'test', 'category': 'testcat', 'speaker': 'testspeak', 'content_type': 'audio_transcription', 'original_filename': 'sample_customer_call.wav'}
+2026-01-11 19:27:21,955 - DEBUG - model:227 - WARNING: No ONNX providers provided, defaulting to available providers: ['AzureExecutionProvider', 'CPUExecutionProvider']
+2026-01-11 19:27:22,667 - INFO - audio_processing_page:394 - ChromaDB processing complete. Collection: InsuranceDemo1
+2026-01-11 19:27:22,678 - DEBUG - audio_processing_page:445 - Cleaned up temp file: C:\Users\navinp\AppData\Local\Temp\tmpbalwl9qo.wav
+2026-01-11 19:27:40,871 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_192740.log
+2026-01-11 19:27:48,018 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_192748.log
+2026-01-11 19:28:18,904 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_192818.log
+2026-01-11 19:28:21,528 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_192821.log
+2026-01-11 19:28:25,681 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_192825.log
+2026-01-11 19:28:27,563 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_192827.log
+2026-01-11 19:28:27,651 - INFO - audio_processing_page:296 - Starting audio processing for file: 01_Customer_Service_Call.wav
+2026-01-11 19:28:27,652 - DEBUG - audio_processing_page:297 - File size: 4761114 bytes
+2026-01-11 19:28:27,652 - DEBUG - audio_processing_page:298 - Collection name: InsuranceDemo1
+2026-01-11 19:28:27,653 - DEBUG - audio_processing_page:299 - Language: en-US
+2026-01-11 19:28:27,657 - INFO - audio_processing_page:316 - Audio file saved to: C:\Users\navinp\AppData\Local\Temp\tmpnhyj10rt.wav
+2026-01-11 19:28:27,687 - INFO - audio_processing_page:324 - Audio split into 3 chunks
+2026-01-11 19:28:27,689 - DEBUG - audio_processing_page:335 - Transcribing chunk 1/3
+2026-01-11 19:28:41,822 - DEBUG - audio_processing_page:338 - Chunk 1 transcribed: 928 characters
+2026-01-11 19:28:41,823 - DEBUG - audio_processing_page:335 - Transcribing chunk 2/3
+2026-01-11 19:28:56,039 - DEBUG - audio_processing_page:338 - Chunk 2 transcribed: 948 characters
+2026-01-11 19:28:56,040 - DEBUG - audio_processing_page:335 - Transcribing chunk 3/3
+2026-01-11 19:29:02,755 - DEBUG - audio_processing_page:338 - Chunk 3 transcribed: 449 characters
+2026-01-11 19:29:02,756 - INFO - audio_processing_page:351 - Transcription complete. Total length: 2327 characters
+2026-01-11 19:29:02,758 - INFO - audio_processing_page:360 - Created 12 text chunks for storage
+2026-01-11 19:29:02,759 - DEBUG - audio_processing_page:373 - Audio metadata: {'source': 'CSR Calls log', 'category': 'testcat1', 'speaker': 'testspeak1', 'content_type': 'audio_transcription', 'original_filename': '01_Customer_Service_Call.wav'}
+2026-01-11 19:29:02,870 - DEBUG - model:227 - WARNING: No ONNX providers provided, defaulting to available providers: ['AzureExecutionProvider', 'CPUExecutionProvider']
+2026-01-11 19:29:03,798 - DEBUG - model:227 - WARNING: No ONNX providers provided, defaulting to available providers: ['AzureExecutionProvider', 'CPUExecutionProvider']
+2026-01-11 19:29:04,260 - INFO - audio_processing_page:394 - ChromaDB processing complete. Collection: InsuranceDemo1
+2026-01-11 19:29:04,286 - DEBUG - audio_processing_page:445 - Cleaned up temp file: C:\Users\navinp\AppData\Local\Temp\tmpnhyj10rt.wav
+2026-01-11 19:29:04,288 - DEBUG - audio_processing_page:445 - Cleaned up temp file: C:\Users\navinp\AppData\Local\Temp\tmp_ljah4mm_chunk_0.wav
+2026-01-11 19:29:04,290 - DEBUG - audio_processing_page:445 - Cleaned up temp file: C:\Users\navinp\AppData\Local\Temp\tmpymvkkpfg_chunk_1.wav
+2026-01-11 19:29:04,294 - DEBUG - audio_processing_page:445 - Cleaned up temp file: C:\Users\navinp\AppData\Local\Temp\tmplf7j5l2g_chunk_2.wav
+2026-01-11 19:29:29,777 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_192929.log
+2026-01-11 19:29:32,722 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_192932.log
+2026-01-11 19:30:00,468 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_193000.log
+2026-01-11 19:30:00,543 - INFO - chat_page:295 - User query: how did the conversation between Cameron Becker and customer go? 
+2026-01-11 19:30:00,543 - INFO - chat_page:296 - Active collection: InsuranceDemo1
+2026-01-11 19:30:00,546 - DEBUG - chat_page:308 - Starting document search...
+2026-01-11 19:30:00,546 - DEBUG - chat_page:322 - Querying collection with: how did the conversation between Cameron Becker and customer go? ...
+2026-01-11 19:30:00,581 - DEBUG - model:227 - WARNING: No ONNX providers provided, defaulting to available providers: ['AzureExecutionProvider', 'CPUExecutionProvider']
+2026-01-11 19:30:00,964 - DEBUG - chat_page:328 - Query results type: <class 'dict'>
+2026-01-11 19:30:00,964 - DEBUG - chat_page:329 - Query results keys: dict_keys(['ids', 'embeddings', 'documents', 'uris', 'included', 'data', 'metadatas', 'distances'])
+2026-01-11 19:30:00,964 - DEBUG - chat_page:333 - Similarity distances: [[1.3416070938110352, 1.4345028400421143, 1.5410796403884888]]
+2026-01-11 19:30:00,965 - DEBUG - chat_page:339 - Retrieved docs: 1 items
+2026-01-11 19:30:00,965 - DEBUG - chat_page:348 - Extracted 3 context items from nested list
+2026-01-11 19:30:00,965 - DEBUG - chat_page:351 -   Context item 1 (200 chars): tin  boards  
+12.2. Intranet  posting  
+12.3. On-the-job communication   and meetings  
+ 
+4.13  Internal  communication  is documented.  Information  ...
+2026-01-11 19:30:00,965 - DEBUG - chat_page:351 -   Context item 2 (200 chars): good afternoon and thank you for calling contoso Suites this call is being recorded for quality assurance purposes my name is Cameron Baker how can I ...
+2026-01-11 19:30:00,966 - DEBUG - chat_page:351 -   Context item 3 (200 chars): e After  Your  Death  ................................ .. 6 
+Cancellation  ................................ ................................ ............
+2026-01-11 19:30:00,966 - DEBUG - chat_page:358 - First context item preview: tin  boards  
+12.2. Intranet  posting  
+12.3. On-the-job communication   and meetings  
+ 
+4.13  Internal  communication  is documented.  Information  includes:  topics  
+communicated,  target  audienc...
+2026-01-11 19:30:00,966 - INFO - chat_page:363 - Final context length: 610 characters, 3 items
+2026-01-11 19:30:00,971 - DEBUG - chat_page:394 - RAG prompt length: 929 characters
+2026-01-11 19:30:00,972 - DEBUG - chat_page:395 - Context included in prompt: 610 characters
+2026-01-11 19:30:00,972 - INFO - chat_page:399 - Using LLM model: gemma:2b
+2026-01-11 19:30:00,973 - DEBUG - chat_page:420 - Trying model: gemma:2b
+2026-01-11 19:30:00,989 - DEBUG - trace:47 - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2026-01-11 19:30:00,990 - DEBUG - trace:47 - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000002607F9C4EC0>
+2026-01-11 19:30:00,990 - DEBUG - trace:47 - send_request_headers.started request=<Request [b'POST']>
+2026-01-11 19:30:00,991 - DEBUG - trace:47 - send_request_headers.complete
+2026-01-11 19:30:00,992 - DEBUG - trace:47 - send_request_body.started request=<Request [b'POST']>
+2026-01-11 19:30:00,992 - DEBUG - trace:47 - send_request_body.complete
+2026-01-11 19:30:00,993 - DEBUG - trace:47 - receive_response_headers.started request=<Request [b'POST']>
+2026-01-11 19:30:17,459 - DEBUG - trace:47 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Mon, 12 Jan 2026 00:30:17 GMT'), (b'Content-Length', b'466')])
+2026-01-11 19:30:17,460 - INFO - _send_single_request:1025 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-11 19:30:17,461 - DEBUG - trace:47 - receive_response_body.started request=<Request [b'POST']>
+2026-01-11 19:30:17,461 - DEBUG - trace:47 - receive_response_body.complete
+2026-01-11 19:30:17,462 - DEBUG - trace:47 - response_closed.started
+2026-01-11 19:30:17,462 - DEBUG - trace:47 - response_closed.complete
+2026-01-11 19:30:17,465 - INFO - chat_page:435 - Successfully got response from model gemma:2b, length: 168 chars
+2026-01-11 19:30:17,466 - DEBUG - chat_page:436 - Response preview: The context does not provide any information about the conversation between Cameron Becker and the customer, so I cannot answer this question from the provided context....
+2026-01-11 19:31:01,771 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_193101.log
+2026-01-11 19:31:01,908 - INFO - chat_page:295 - User query: how did the conversation between Cameron Becker and Parker McLean go
+2026-01-11 19:31:01,909 - INFO - chat_page:296 - Active collection: InsuranceDemo1
+2026-01-11 19:31:01,911 - DEBUG - chat_page:308 - Starting document search...
+2026-01-11 19:31:01,911 - DEBUG - chat_page:322 - Querying collection with: how did the conversation between Cameron Becker and Parker McLean go...
+2026-01-11 19:31:01,950 - DEBUG - model:227 - WARNING: No ONNX providers provided, defaulting to available providers: ['AzureExecutionProvider', 'CPUExecutionProvider']
+2026-01-11 19:31:02,438 - DEBUG - chat_page:328 - Query results type: <class 'dict'>
+2026-01-11 19:31:02,439 - DEBUG - chat_page:329 - Query results keys: dict_keys(['ids', 'embeddings', 'documents', 'uris', 'included', 'data', 'metadatas', 'distances'])
+2026-01-11 19:31:02,439 - DEBUG - chat_page:333 - Similarity distances: [[1.4239708185195923, 1.5042173862457275, 1.5726752281188965]]
+2026-01-11 19:31:02,439 - DEBUG - chat_page:339 - Retrieved docs: 1 items
+2026-01-11 19:31:02,439 - DEBUG - chat_page:348 - Extracted 3 context items from nested list
+2026-01-11 19:31:02,440 - DEBUG - chat_page:351 -   Context item 1 (200 chars): good afternoon and thank you for calling contoso Suites this call is being recorded for quality assurance purposes my name is Cameron Baker how can I ...
+2026-01-11 19:31:02,440 - DEBUG - chat_page:351 -   Context item 2 (200 chars): tin  boards  
+12.2. Intranet  posting  
+12.3. On-the-job communication   and meetings  
+ 
+4.13  Internal  communication  is documented.  Information  ...
+2026-01-11 19:31:02,440 - DEBUG - chat_page:351 -   Context item 3 (200 chars): nd I'm calling because I wanted to change some of the details on my upcoming stay thank you for choosing contoso Suites Mr McLean could you please tel...
+2026-01-11 19:31:02,441 - DEBUG - chat_page:358 - First context item preview: good afternoon and thank you for calling contoso Suites this call is being recorded for quality assurance purposes my name is Cameron Baker how can I assist you today yes hi my name is Parker McLean a...
+2026-01-11 19:31:02,441 - INFO - chat_page:363 - Final context length: 610 characters, 3 items
+2026-01-11 19:31:02,453 - DEBUG - chat_page:394 - RAG prompt length: 932 characters
+2026-01-11 19:31:02,453 - DEBUG - chat_page:395 - Context included in prompt: 610 characters
+2026-01-11 19:31:02,454 - INFO - chat_page:399 - Using LLM model: gemma:2b
+2026-01-11 19:31:02,454 - DEBUG - chat_page:420 - Trying model: gemma:2b
+2026-01-11 19:31:02,455 - DEBUG - trace:47 - close.started
+2026-01-11 19:31:02,456 - DEBUG - trace:47 - close.complete
+2026-01-11 19:31:02,456 - DEBUG - trace:47 - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2026-01-11 19:31:02,457 - DEBUG - trace:47 - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000002607FA28410>
+2026-01-11 19:31:02,458 - DEBUG - trace:47 - send_request_headers.started request=<Request [b'POST']>
+2026-01-11 19:31:02,459 - DEBUG - trace:47 - send_request_headers.complete
+2026-01-11 19:31:02,459 - DEBUG - trace:47 - send_request_body.started request=<Request [b'POST']>
+2026-01-11 19:31:02,460 - DEBUG - trace:47 - send_request_body.complete
+2026-01-11 19:31:02,462 - DEBUG - trace:47 - receive_response_headers.started request=<Request [b'POST']>
+2026-01-11 19:31:12,585 - DEBUG - trace:47 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Mon, 12 Jan 2026 00:31:12 GMT'), (b'Content-Length', b'452')])
+2026-01-11 19:31:12,587 - INFO - _send_single_request:1025 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-11 19:31:12,588 - DEBUG - trace:47 - receive_response_body.started request=<Request [b'POST']>
+2026-01-11 19:31:12,588 - DEBUG - trace:47 - receive_response_body.complete
+2026-01-11 19:31:12,589 - DEBUG - trace:47 - response_closed.started
+2026-01-11 19:31:12,589 - DEBUG - trace:47 - response_closed.complete
+2026-01-11 19:31:12,590 - INFO - chat_page:435 - Successfully got response from model gemma:2b, length: 155 chars
+2026-01-11 19:31:12,590 - DEBUG - chat_page:436 - Response preview: The context does not provide information about the conversation between Cameron Baker and Parker McLean, so I cannot answer this question from the context....

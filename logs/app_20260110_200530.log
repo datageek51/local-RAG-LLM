@@ -1,0 +1,303 @@
+2026-01-10 20:05:30,868 - INFO - <module>:24 - Application started. Log file: logs\app_20260110_200530.log
+2026-01-10 20:05:33,922 - INFO - <module>:24 - Application started. Log file: logs\app_20260110_200533.log
+2026-01-10 20:05:34,225 - DEBUG - start:359 - Starting component System
+2026-01-10 20:05:34,225 - DEBUG - start:359 - Starting component Posthog
+2026-01-10 20:05:52,219 - INFO - <module>:24 - Application started. Log file: logs\app_20260110_200552.log
+2026-01-10 20:05:52,308 - INFO - chat_page:280 - User query: Identify what is policy around Arsnal
+2026-01-10 20:05:52,309 - INFO - chat_page:281 - Active collection: InsuranceDemo1
+2026-01-10 20:05:52,313 - DEBUG - chat_page:293 - Starting document search...
+2026-01-10 20:05:52,314 - DEBUG - chat_page:307 - Querying collection with: Identify what is policy around Arsnal...
+2026-01-10 20:05:52,779 - DEBUG - model:227 - WARNING: No ONNX providers provided, defaulting to available providers: ['AzureExecutionProvider', 'CPUExecutionProvider']
+2026-01-10 20:05:53,257 - DEBUG - chat_page:313 - Query results type: <class 'dict'>
+2026-01-10 20:05:53,258 - DEBUG - chat_page:314 - Query results keys: dict_keys(['ids', 'embeddings', 'documents', 'uris', 'included', 'data', 'metadatas', 'distances'])
+2026-01-10 20:05:53,258 - DEBUG - chat_page:320 - Retrieved docs: 1 items
+2026-01-10 20:05:53,259 - DEBUG - chat_page:329 - Extracted 3 context items from nested list
+2026-01-10 20:05:53,259 - DEBUG - chat_page:336 - First context item preview: ises, structures and grounds you 
+acquire  for your  use as a private  residence  while 
+this policy is in  effect;  
+2) any part of a premises not  owned  by an insured 
+person but where an insured p...
+2026-01-10 20:05:53,259 - INFO - chat_page:341 - Final context length: 610 characters, 3 items
+2026-01-10 20:05:53,263 - DEBUG - chat_page:366 - RAG prompt length: 901 characters
+2026-01-10 20:05:53,264 - DEBUG - chat_page:367 - Context included in prompt: 610 characters
+2026-01-10 20:05:53,264 - INFO - chat_page:371 - Using LLM model: gemma:2b
+2026-01-10 20:05:53,264 - DEBUG - chat_page:392 - Trying model: gemma:2b
+2026-01-10 20:05:53,280 - DEBUG - trace:47 - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2026-01-10 20:05:53,284 - DEBUG - trace:47 - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001DBF96F2E40>
+2026-01-10 20:05:53,284 - DEBUG - trace:47 - send_request_headers.started request=<Request [b'POST']>
+2026-01-10 20:05:53,286 - DEBUG - trace:47 - send_request_headers.complete
+2026-01-10 20:05:53,286 - DEBUG - trace:47 - send_request_body.started request=<Request [b'POST']>
+2026-01-10 20:05:53,287 - DEBUG - trace:47 - send_request_body.complete
+2026-01-10 20:05:53,287 - DEBUG - trace:47 - receive_response_headers.started request=<Request [b'POST']>
+2026-01-10 20:06:05,003 - DEBUG - trace:47 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 11 Jan 2026 01:06:05 GMT'), (b'Content-Length', b'416')])
+2026-01-10 20:06:05,005 - INFO - _send_single_request:1025 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-10 20:06:05,006 - DEBUG - trace:47 - receive_response_body.started request=<Request [b'POST']>
+2026-01-10 20:06:05,006 - DEBUG - trace:47 - receive_response_body.complete
+2026-01-10 20:06:05,007 - DEBUG - trace:47 - response_closed.started
+2026-01-10 20:06:05,008 - DEBUG - trace:47 - response_closed.complete
+2026-01-10 20:06:05,008 - INFO - chat_page:407 - Successfully got response from model gemma:2b, length: 119 chars
+2026-01-10 20:06:05,010 - DEBUG - chat_page:408 - Response preview: The context does not provide information about policy around Arsnal, so I cannot answer this question from the context....
+2026-01-10 20:07:41,421 - INFO - <module>:24 - Application started. Log file: logs\app_20260110_200741.log
+2026-01-10 20:07:41,698 - INFO - chat_page:295 - User query: ok give me summary for homeowners policy covered under standard law
+2026-01-10 20:07:41,699 - INFO - chat_page:296 - Active collection: InsuranceDemo1
+2026-01-10 20:07:41,702 - DEBUG - chat_page:308 - Starting document search...
+2026-01-10 20:07:41,702 - DEBUG - chat_page:322 - Querying collection with: ok give me summary for homeowners policy covered under standard law...
+2026-01-10 20:07:41,743 - DEBUG - model:227 - WARNING: No ONNX providers provided, defaulting to available providers: ['AzureExecutionProvider', 'CPUExecutionProvider']
+2026-01-10 20:07:42,288 - DEBUG - chat_page:328 - Query results type: <class 'dict'>
+2026-01-10 20:07:42,289 - DEBUG - chat_page:329 - Query results keys: dict_keys(['ids', 'embeddings', 'documents', 'uris', 'included', 'data', 'metadatas', 'distances'])
+2026-01-10 20:07:42,289 - DEBUG - chat_page:333 - Similarity distances: [[0.8011969327926636, 0.8032805919647217, 0.8143161535263062]]
+2026-01-10 20:07:42,289 - DEBUG - chat_page:339 - Retrieved docs: 1 items
+2026-01-10 20:07:42,290 - DEBUG - chat_page:348 - Extracted 3 context items from nested list
+2026-01-10 20:07:42,290 - DEBUG - chat_page:351 -   Context item 1 (200 chars): Standard  House  & Home  Policy 
+Policy  number:  
+Policy effective date:  Allstate .  
+ 
+3. What  You Must  Do After  A Loss  
+In the event of a loss...
+2026-01-10 20:07:42,291 - DEBUG - chat_page:351 -   Context item 2 (200 chars): Standard  House  & Home  Policy 
+Policy  number:  
+Policy effective date: 
+Your Allstate agency is  Page  12 of 25  
+ 
+ 
+ 
+ 
+7. We do not cover bodily...
+2026-01-10 20:07:42,291 - DEBUG - chat_page:351 -   Context item 3 (200 chars): Standard  House  & Home  Policy 
+Policy  number:  
+Policy effective date: 
+Your Allstate agency is  Page 2 of 25   
+ 
+ 
+ 
+ 
+Table of Contents  
+Agreem...
+2026-01-10 20:07:42,291 - DEBUG - chat_page:358 - First context item preview: Standard  House  & Home  Policy 
+Policy  number:  
+Policy effective date:  Allstate .  
+ 
+3. What  You Must  Do After  A Loss  
+In the event of a loss to any property that may be covered by this polic...
+2026-01-10 20:07:42,292 - INFO - chat_page:363 - Final context length: 610 characters, 3 items
+2026-01-10 20:07:42,303 - DEBUG - chat_page:394 - RAG prompt length: 931 characters
+2026-01-10 20:07:42,304 - DEBUG - chat_page:395 - Context included in prompt: 610 characters
+2026-01-10 20:07:42,304 - INFO - chat_page:399 - Using LLM model: gemma:2b
+2026-01-10 20:07:42,304 - DEBUG - chat_page:420 - Trying model: gemma:2b
+2026-01-10 20:07:42,306 - DEBUG - trace:47 - close.started
+2026-01-10 20:07:42,306 - DEBUG - trace:47 - close.complete
+2026-01-10 20:07:42,307 - DEBUG - trace:47 - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2026-01-10 20:07:42,308 - DEBUG - trace:47 - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001DBF980C190>
+2026-01-10 20:07:42,309 - DEBUG - trace:47 - send_request_headers.started request=<Request [b'POST']>
+2026-01-10 20:07:42,310 - DEBUG - trace:47 - send_request_headers.complete
+2026-01-10 20:07:42,310 - DEBUG - trace:47 - send_request_body.started request=<Request [b'POST']>
+2026-01-10 20:07:42,311 - DEBUG - trace:47 - send_request_body.complete
+2026-01-10 20:07:42,311 - DEBUG - trace:47 - receive_response_headers.started request=<Request [b'POST']>
+2026-01-10 20:08:04,171 - DEBUG - trace:47 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 11 Jan 2026 01:08:04 GMT'), (b'Content-Length', b'700')])
+2026-01-10 20:08:04,172 - INFO - _send_single_request:1025 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-10 20:08:04,172 - DEBUG - trace:47 - receive_response_body.started request=<Request [b'POST']>
+2026-01-10 20:08:04,173 - DEBUG - trace:47 - receive_response_body.complete
+2026-01-10 20:08:04,173 - DEBUG - trace:47 - response_closed.started
+2026-01-10 20:08:04,173 - DEBUG - trace:47 - response_closed.complete
+2026-01-10 20:08:04,174 - INFO - chat_page:435 - Successfully got response from model gemma:2b, length: 392 chars
+2026-01-10 20:08:04,174 - DEBUG - chat_page:436 - Response preview: Sure, here's a summary of homeowners policy covered under the standard law:
+
+- Standard Home & Home Policy covers standard dwelling and household items.
+- Policy number and effective date are indicate...
+2026-01-10 20:11:11,640 - INFO - <module>:24 - Application started. Log file: logs\app_20260110_201111.log
+2026-01-10 20:11:12,042 - INFO - chat_page:295 - User query: dentify what is policy around Arson
+2026-01-10 20:11:12,042 - INFO - chat_page:296 - Active collection: InsuranceDemo1
+2026-01-10 20:11:12,047 - DEBUG - chat_page:308 - Starting document search...
+2026-01-10 20:11:12,047 - DEBUG - chat_page:322 - Querying collection with: dentify what is policy around Arson...
+2026-01-10 20:11:12,182 - DEBUG - model:227 - WARNING: No ONNX providers provided, defaulting to available providers: ['AzureExecutionProvider', 'CPUExecutionProvider']
+2026-01-10 20:11:13,575 - DEBUG - chat_page:328 - Query results type: <class 'dict'>
+2026-01-10 20:11:13,576 - DEBUG - chat_page:329 - Query results keys: dict_keys(['ids', 'embeddings', 'documents', 'uris', 'included', 'data', 'metadatas', 'distances'])
+2026-01-10 20:11:13,576 - DEBUG - chat_page:333 - Similarity distances: [[1.045318841934204, 1.1147310733795166, 1.1551705598831177]]
+2026-01-10 20:11:13,577 - DEBUG - chat_page:339 - Retrieved docs: 1 items
+2026-01-10 20:11:13,578 - DEBUG - chat_page:348 - Extracted 3 context items from nested list
+2026-01-10 20:11:13,578 - DEBUG - chat_page:351 -   Context item 1 (200 chars):   not increase  the limit of liability applying to the damaged  property.  
+ 
+9. Arson  Reward  
+We will pay up to $5,000 for information leading to a...
+2026-01-10 20:11:13,578 - DEBUG - chat_page:351 -   Context item 2 (200 chars): s at the  
+residence premises.  
+ 
+However, we will cover sudden and accidental 
+direct physical loss caused by actions of civil, 
+governmental or mil...
+2026-01-10 20:11:13,579 - DEBUG - chat_page:351 -   Context item 3 (200 chars):  substance which exerts pressure on, or flows, 
+seeps or leaks through any part of the residence 
+premises.  
+ 
+We do cover sudden and accidental dire...
+2026-01-10 20:11:13,579 - DEBUG - chat_page:358 - First context item preview:   not increase  the limit of liability applying to the damaged  property.  
+ 
+9. Arson  Reward  
+We will pay up to $5,000 for information leading to an arson conviction in connection with a fire loss ...
+2026-01-10 20:11:13,579 - INFO - chat_page:363 - Final context length: 610 characters, 3 items
+2026-01-10 20:11:13,589 - DEBUG - chat_page:394 - RAG prompt length: 899 characters
+2026-01-10 20:11:13,590 - DEBUG - chat_page:395 - Context included in prompt: 610 characters
+2026-01-10 20:11:13,591 - INFO - chat_page:399 - Using LLM model: gemma:2b
+2026-01-10 20:11:13,592 - DEBUG - chat_page:420 - Trying model: gemma:2b
+2026-01-10 20:11:13,633 - DEBUG - trace:47 - close.started
+2026-01-10 20:11:13,634 - DEBUG - trace:47 - close.complete
+2026-01-10 20:11:13,635 - DEBUG - trace:47 - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2026-01-10 20:11:13,641 - DEBUG - trace:47 - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001DBEB4102D0>
+2026-01-10 20:11:13,642 - DEBUG - trace:47 - send_request_headers.started request=<Request [b'POST']>
+2026-01-10 20:11:13,645 - DEBUG - trace:47 - send_request_headers.complete
+2026-01-10 20:11:13,646 - DEBUG - trace:47 - send_request_body.started request=<Request [b'POST']>
+2026-01-10 20:11:13,647 - DEBUG - trace:47 - send_request_body.complete
+2026-01-10 20:11:13,647 - DEBUG - trace:47 - receive_response_headers.started request=<Request [b'POST']>
+2026-01-10 20:11:24,660 - DEBUG - trace:47 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 11 Jan 2026 01:11:24 GMT'), (b'Content-Length', b'419')])
+2026-01-10 20:11:24,686 - INFO - _send_single_request:1025 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-10 20:11:24,692 - DEBUG - trace:47 - receive_response_body.started request=<Request [b'POST']>
+2026-01-10 20:11:24,695 - DEBUG - trace:47 - receive_response_body.complete
+2026-01-10 20:11:24,696 - DEBUG - trace:47 - response_closed.started
+2026-01-10 20:11:24,697 - DEBUG - trace:47 - response_closed.complete
+2026-01-10 20:11:24,700 - INFO - chat_page:435 - Successfully got response from model gemma:2b, length: 122 chars
+2026-01-10 20:11:24,701 - DEBUG - chat_page:436 - Response preview: The context does not provide information about the policy around arson, so I cannot answer this question from the context....
+2026-01-10 20:11:56,877 - INFO - <module>:24 - Application started. Log file: logs\app_20260110_201156.log
+2026-01-10 20:11:57,039 - INFO - <module>:24 - Application started. Log file: logs\app_20260110_201157.log
+2026-01-10 20:12:14,013 - INFO - <module>:24 - Application started. Log file: logs\app_20260110_201214.log
+2026-01-10 20:12:14,085 - INFO - chat_page:295 - User query: identify what is policy around Arson reward
+2026-01-10 20:12:14,086 - INFO - chat_page:296 - Active collection: InsuranceDemo1
+2026-01-10 20:12:14,088 - DEBUG - chat_page:308 - Starting document search...
+2026-01-10 20:12:14,089 - DEBUG - chat_page:322 - Querying collection with: identify what is policy around Arson reward...
+2026-01-10 20:12:14,141 - DEBUG - model:227 - WARNING: No ONNX providers provided, defaulting to available providers: ['AzureExecutionProvider', 'CPUExecutionProvider']
+2026-01-10 20:12:14,511 - DEBUG - chat_page:328 - Query results type: <class 'dict'>
+2026-01-10 20:12:14,512 - DEBUG - chat_page:329 - Query results keys: dict_keys(['ids', 'embeddings', 'documents', 'uris', 'included', 'data', 'metadatas', 'distances'])
+2026-01-10 20:12:14,512 - DEBUG - chat_page:333 - Similarity distances: [[0.7377106547355652, 1.1145061254501343, 1.1289809942245483]]
+2026-01-10 20:12:14,512 - DEBUG - chat_page:339 - Retrieved docs: 1 items
+2026-01-10 20:12:14,513 - DEBUG - chat_page:348 - Extracted 3 context items from nested list
+2026-01-10 20:12:14,513 - DEBUG - chat_page:351 -   Context item 1 (200 chars):   not increase  the limit of liability applying to the damaged  property.  
+ 
+9. Arson  Reward  
+We will pay up to $5,000 for information leading to a...
+2026-01-10 20:12:14,513 - DEBUG - chat_page:351 -   Context item 2 (200 chars): s at the  
+residence premises.  
+ 
+However, we will cover sudden and accidental 
+direct physical loss caused by actions of civil, 
+governmental or mil...
+2026-01-10 20:12:14,513 - DEBUG - chat_page:351 -   Context item 3 (200 chars): a result of:  
+a) sudden and accidental direct physical loss to the 
+property held in common by all building owners 
+caused  by a loss we cover  under...
+2026-01-10 20:12:14,514 - DEBUG - chat_page:358 - First context item preview:   not increase  the limit of liability applying to the damaged  property.  
+ 
+9. Arson  Reward  
+We will pay up to $5,000 for information leading to an arson conviction in connection with a fire loss ...
+2026-01-10 20:12:14,514 - INFO - chat_page:363 - Final context length: 610 characters, 3 items
+2026-01-10 20:12:14,522 - DEBUG - chat_page:394 - RAG prompt length: 907 characters
+2026-01-10 20:12:14,522 - DEBUG - chat_page:395 - Context included in prompt: 610 characters
+2026-01-10 20:12:14,522 - INFO - chat_page:399 - Using LLM model: gemma:2b
+2026-01-10 20:12:14,523 - DEBUG - chat_page:420 - Trying model: gemma:2b
+2026-01-10 20:12:14,524 - DEBUG - trace:47 - close.started
+2026-01-10 20:12:14,526 - DEBUG - trace:47 - close.complete
+2026-01-10 20:12:14,527 - DEBUG - trace:47 - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2026-01-10 20:12:14,529 - DEBUG - trace:47 - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001DBF9800640>
+2026-01-10 20:12:14,530 - DEBUG - trace:47 - send_request_headers.started request=<Request [b'POST']>
+2026-01-10 20:12:14,531 - DEBUG - trace:47 - send_request_headers.complete
+2026-01-10 20:12:14,532 - DEBUG - trace:47 - send_request_body.started request=<Request [b'POST']>
+2026-01-10 20:12:14,533 - DEBUG - trace:47 - send_request_body.complete
+2026-01-10 20:12:14,534 - DEBUG - trace:47 - receive_response_headers.started request=<Request [b'POST']>
+2026-01-10 20:12:42,151 - DEBUG - trace:47 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 11 Jan 2026 01:12:42 GMT'), (b'Content-Length', b'490')])
+2026-01-10 20:12:42,155 - INFO - _send_single_request:1025 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-10 20:12:42,156 - DEBUG - trace:47 - receive_response_body.started request=<Request [b'POST']>
+2026-01-10 20:12:42,157 - DEBUG - trace:47 - receive_response_body.complete
+2026-01-10 20:12:42,157 - DEBUG - trace:47 - response_closed.started
+2026-01-10 20:12:42,159 - DEBUG - trace:47 - response_closed.complete
+2026-01-10 20:12:42,159 - INFO - chat_page:435 - Successfully got response from model gemma:2b, length: 192 chars
+2026-01-10 20:12:42,160 - DEBUG - chat_page:436 - Response preview: The policy around Arson reward covers sudden and accidental direct physical loss to the property held in common by all building owners caused by a loss we cover under Section I of this policy....
+2026-01-10 20:15:09,339 - INFO - <module>:24 - Application started. Log file: logs\app_20260110_201509.log
+2026-01-10 20:15:38,675 - INFO - <module>:24 - Application started. Log file: logs\app_20260110_201538.log
+2026-01-10 20:15:52,983 - INFO - <module>:24 - Application started. Log file: logs\app_20260110_201552.log
+2026-01-10 20:15:58,072 - INFO - <module>:24 - Application started. Log file: logs\app_20260110_201558.log
+2026-01-10 20:16:05,388 - INFO - <module>:24 - Application started. Log file: logs\app_20260110_201605.log
+2026-01-10 20:16:13,347 - INFO - <module>:24 - Application started. Log file: logs\app_20260110_201613.log
+2026-01-10 20:16:15,398 - INFO - <module>:24 - Application started. Log file: logs\app_20260110_201615.log
+2026-01-10 20:16:15,457 - INFO - document_processing_page:251 - Starting text extraction for file: QP-1003-TRAINING-SOP.pdf
+2026-01-10 20:16:15,457 - DEBUG - document_processing_page:252 - File size: 227281 bytes
+2026-01-10 20:16:15,458 - DEBUG - document_processing_page:253 - Collection name: AuditDocs
+2026-01-10 20:16:15,459 - DEBUG - document_processing_page:254 - Metadata - Source: QP Training SOP Docs, Category: Company SOP
+2026-01-10 20:16:15,459 - DEBUG - document_processing_page:259 - File pointer reset to beginning before reading
+2026-01-10 20:16:15,467 - INFO - document_processing_page:263 - PDF loaded. Total pages: 3
+2026-01-10 20:16:15,467 - DEBUG - document_processing_page:268 - Processing page 1/3
+2026-01-10 20:16:15,588 - DEBUG - document_processing_page:272 - Page 1: extracted 1815 characters
+2026-01-10 20:16:15,588 - DEBUG - document_processing_page:276 - Page 1 text preview: COMPANY LOGO Title:  PROCEDURE  FOR TRAINING  AND  INTERNAL  COMMUNICATION  
+ Doc #: QP-1003 Rev #: ...
+2026-01-10 20:16:15,589 - DEBUG - document_processing_page:280 - Page 1: created 10 chunks
+2026-01-10 20:16:15,589 - DEBUG - document_processing_page:268 - Processing page 2/3
+2026-01-10 20:16:15,699 - DEBUG - document_processing_page:272 - Page 2: extracted 2418 characters
+2026-01-10 20:16:15,700 - DEBUG - document_processing_page:276 - Page 2 text preview: COMPANY LOGO Title:  PROCEDURE  FOR TRAINING  AND  INTERNAL  COMMUNICATION  
+ Doc #: QP-1003 Rev #: ...
+2026-01-10 20:16:15,700 - DEBUG - document_processing_page:280 - Page 2: created 13 chunks
+2026-01-10 20:16:15,701 - DEBUG - document_processing_page:268 - Processing page 3/3
+2026-01-10 20:16:15,725 - DEBUG - document_processing_page:272 - Page 3: extracted 690 characters
+2026-01-10 20:16:15,726 - DEBUG - document_processing_page:276 - Page 3 text preview: COMPANY LOGO Title:  PROCEDURE  FOR TRAINING  AND  INTERNAL  COMMUNICATION  
+ Doc #: QP-1003 Rev #: ...
+2026-01-10 20:16:15,726 - DEBUG - document_processing_page:280 - Page 3: created 4 chunks
+2026-01-10 20:16:15,726 - INFO - document_processing_page:287 - Text extraction complete. Total chunks created: 27
+2026-01-10 20:16:15,727 - INFO - document_processing_page:295 - Starting ChromaDB processing for 27 chunks
+2026-01-10 20:16:15,729 - DEBUG - document_processing_page:316 - Document metadata: {'source': 'QP Training SOP Docs', 'category': 'Company SOP'}
+2026-01-10 20:16:15,917 - DEBUG - model:227 - WARNING: No ONNX providers provided, defaulting to available providers: ['AzureExecutionProvider', 'CPUExecutionProvider']
+2026-01-10 20:16:17,098 - DEBUG - update_progress:305 - Progress: 10/27 chunks processed
+2026-01-10 20:16:17,145 - DEBUG - model:227 - WARNING: No ONNX providers provided, defaulting to available providers: ['AzureExecutionProvider', 'CPUExecutionProvider']
+2026-01-10 20:16:18,203 - DEBUG - update_progress:305 - Progress: 20/27 chunks processed
+2026-01-10 20:16:18,250 - DEBUG - model:227 - WARNING: No ONNX providers provided, defaulting to available providers: ['AzureExecutionProvider', 'CPUExecutionProvider']
+2026-01-10 20:16:19,051 - DEBUG - update_progress:305 - Progress: 27/27 chunks processed
+2026-01-10 20:16:19,052 - INFO - document_processing_page:325 - ChromaDB processing complete. Collection: AuditDocs
+2026-01-10 20:16:19,055 - DEBUG - document_processing_page:333 - Session state updated with collection and doc_processed flag
+2026-01-10 20:17:05,049 - INFO - <module>:24 - Application started. Log file: logs\app_20260110_201705.log
+2026-01-10 20:17:08,781 - INFO - <module>:24 - Application started. Log file: logs\app_20260110_201708.log
+2026-01-10 20:17:11,581 - INFO - <module>:24 - Application started. Log file: logs\app_20260110_201711.log
+2026-01-10 20:17:24,278 - INFO - <module>:24 - Application started. Log file: logs\app_20260110_201724.log
+2026-01-10 20:17:24,381 - INFO - chat_page:295 - User query: Summarize document for me
+2026-01-10 20:17:24,382 - INFO - chat_page:296 - Active collection: AuditDocs
+2026-01-10 20:17:24,384 - DEBUG - chat_page:308 - Starting document search...
+2026-01-10 20:17:24,385 - DEBUG - chat_page:322 - Querying collection with: Summarize document for me...
+2026-01-10 20:17:24,425 - DEBUG - model:227 - WARNING: No ONNX providers provided, defaulting to available providers: ['AzureExecutionProvider', 'CPUExecutionProvider']
+2026-01-10 20:17:24,846 - DEBUG - chat_page:328 - Query results type: <class 'dict'>
+2026-01-10 20:17:24,846 - DEBUG - chat_page:329 - Query results keys: dict_keys(['ids', 'embeddings', 'documents', 'uris', 'included', 'data', 'metadatas', 'distances'])
+2026-01-10 20:17:24,847 - DEBUG - chat_page:333 - Similarity distances: [[1.4732160568237305, 1.5177333354949951, 1.5440737009048462]]
+2026-01-10 20:17:24,847 - DEBUG - chat_page:339 - Retrieved docs: 1 items
+2026-01-10 20:17:24,847 - DEBUG - chat_page:348 - Extracted 3 context items from nested list
+2026-01-10 20:17:24,848 - DEBUG - chat_page:351 -   Context item 1 (200 chars): 
+9. Training  to documents  is provided  per Document  Control  Procedure  (all “users” 
+on the distribution  matrix  receive  training  for new  or r...
+2026-01-10 20:17:24,850 - DEBUG - chat_page:351 -   Context item 2 (200 chars): ds  are submitted  to Document  Control  Administrator  for 
+filing.   
+ 
+10. Communication  and required  training  associated  with  corrective  act...
+2026-01-10 20:17:24,850 - DEBUG - chat_page:351 -   Context item 3 (200 chars): on  which  includes  the following  topics  (at a minimum):  
+3.1. Quality  policy  
+3.2. Current  quality  objectives  
+3.3. Relevant  procedures  (a...
+2026-01-10 20:17:24,850 - DEBUG - chat_page:358 - First context item preview: 
+9. Training  to documents  is provided  per Document  Control  Procedure  (all “users” 
+on the distribution  matrix  receive  training  for new  or revised  documents  per QP-
+1001).  Training  recor...
+2026-01-10 20:17:24,850 - INFO - chat_page:363 - Final context length: 610 characters, 3 items
+2026-01-10 20:17:24,855 - DEBUG - chat_page:394 - RAG prompt length: 889 characters
+2026-01-10 20:17:24,855 - DEBUG - chat_page:395 - Context included in prompt: 610 characters
+2026-01-10 20:17:24,856 - INFO - chat_page:399 - Using LLM model: gemma:2b
+2026-01-10 20:17:24,856 - DEBUG - chat_page:420 - Trying model: gemma:2b
+2026-01-10 20:17:24,857 - DEBUG - trace:47 - close.started
+2026-01-10 20:17:24,859 - DEBUG - trace:47 - close.complete
+2026-01-10 20:17:24,860 - DEBUG - trace:47 - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2026-01-10 20:17:24,861 - DEBUG - trace:47 - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001DBF9800E90>
+2026-01-10 20:17:24,861 - DEBUG - trace:47 - send_request_headers.started request=<Request [b'POST']>
+2026-01-10 20:17:24,863 - DEBUG - trace:47 - send_request_headers.complete
+2026-01-10 20:17:24,863 - DEBUG - trace:47 - send_request_body.started request=<Request [b'POST']>
+2026-01-10 20:17:24,864 - DEBUG - trace:47 - send_request_body.complete
+2026-01-10 20:17:24,865 - DEBUG - trace:47 - receive_response_headers.started request=<Request [b'POST']>
+2026-01-10 20:20:45,185 - DEBUG - trace:47 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Sun, 11 Jan 2026 01:20:45 GMT'), (b'Content-Length', b'799')])
+2026-01-10 20:20:45,187 - INFO - _send_single_request:1025 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-10 20:20:45,190 - DEBUG - trace:47 - receive_response_body.started request=<Request [b'POST']>
+2026-01-10 20:20:45,191 - DEBUG - trace:47 - receive_response_body.complete
+2026-01-10 20:20:45,191 - DEBUG - trace:47 - response_closed.started
+2026-01-10 20:20:45,193 - DEBUG - trace:47 - response_closed.complete
+2026-01-10 20:20:45,194 - INFO - chat_page:435 - Successfully got response from model gemma:2b, length: 492 chars
+2026-01-10 20:20:45,196 - DEBUG - chat_page:436 - Response preview: Sure, here's a summary of the document you provided:
+
+Training for new or revised documents is provided per Document Control Procedure (all users on the distribution matrix receive training for new or...

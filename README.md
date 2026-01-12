@@ -2,14 +2,15 @@
 
 Navin's collabration with AI as part of the Vibe coding
 
-A lightweight Retrieval-Augmented Generation (RAG) demo for local document Q&A:
+A lightweight Retrieval-Augmented Generation (RAG) demo for local document and audio Q&A:
 
 - **Fast Setup**: Uses Streamlit for the UI and runs completely locally
 - **Flexible Storage**: Uses ChromaDB for vector storage (with in-memory fallback)
 - **Local LLM**: Integrates with Ollama for local embedding/chat (optional)
 - **Smart Chunking**: Multiple document chunking strategies for better context
+- **Audio Transcription**: NEW! Process audio files (meetings, podcasts, interviews) and add them to your knowledge base
 
-Process your PDF documents, manage multiple collections, and chat with your documents using retrieval-augmented generation — all running locally on your machine.
+Process your PDF documents and audio files, manage multiple collections, and chat with your content using retrieval-augmented generation — all running locally on your machine.
 
 This README provides step-by-step setup for Windows (PowerShell) with troubleshooting tips.
 
@@ -83,6 +84,68 @@ streamlit run localragdemo.py
 
 This opens the Streamlit UI in your browser. The app has three main sections:
 
+Using Audio Processing (NEW!)
+----------------------------
+The Audio Processing page allows you to transcribe audio files and add them to your knowledge base:
+
+1. **Install Audio Dependencies**:
+   Before using audio processing, install the required libraries:
+   ```powershell
+   pip install SpeechRecognition pydub
+   ```
+   
+   **Important**: PyDub requires FFmpeg to be installed on your system:
+   - Download FFmpeg from https://ffmpeg.org/download.html
+   - For Windows: Download the build, extract, and add the `bin` folder to your PATH
+   - For macOS: `brew install ffmpeg`
+   - For Linux: `sudo apt-get install ffmpeg`
+
+2. **Supported Audio Formats**:
+   - WAV (always supported)
+   - MP3, M4A, OGG, FLAC (requires pydub and ffmpeg)
+
+3. **Upload Audio File**:
+   - Click "Upload Audio File" and select your audio
+   - The app will show a preview player and file info
+   - Supported: meetings, podcasts, interviews, lectures, etc.
+
+4. **Transcription Settings**:
+   - **Language**: Select the language spoken in the audio (10+ languages supported)
+   - **Split long audio**: Automatically splits audio files longer than 60 seconds for better transcription accuracy
+
+5. **Add Metadata** (optional but recommended):
+   - **Audio Source**: e.g., "Team Meeting 2025-01-15"
+   - **Audio Category**: e.g., "Business Meeting", "Education", "News"
+   - **Speaker/Host**: Name of the speaker or meeting host
+   - This metadata helps organize and filter transcriptions later
+
+6. **Choose Your Collection**:
+   - Works exactly like Document Processing
+   - Add to existing collections or create new ones
+   - You can mix document and audio content in the same collection!
+
+7. **Process the Audio**:
+   - Click "Transcribe and Process Audio"
+   - The app will:
+     1. Convert audio to WAV format if needed
+     2. Split into manageable chunks (if enabled)
+     3. Transcribe each chunk using Google Speech Recognition
+     4. Display the full transcription
+     5. Split text into chunks
+     6. Store in ChromaDB with metadata
+   - Watch the progress bar for transcription and storage
+   - Preview the transcription and text chunks
+   - Use "Go to Chat" to ask questions about the audio content
+
+8. **Tips for Best Results**:
+   - Use clear audio with minimal background noise
+   - For long recordings (>5 minutes), enable audio splitting
+   - For multi-speaker content, consider processing shorter segments
+   - Check the transcription preview before storing to verify accuracy
+   - If transcription fails, try improving audio quality or reducing background noise
+
+**Privacy Note**: Audio transcription uses Google's free Speech Recognition API, which requires an internet connection. The audio is sent to Google for processing. If you need offline transcription, consider integrating Whisper or other local models.
+
 Using Document Processing
 ------------------------
 The Document Processing page is where you add documents to your knowledge base:
@@ -124,10 +187,11 @@ Chat page (example):
 
 Using Chat
 ----------
-The Chat page is where you interact with your indexed documents:
+The Chat page is where you interact with your indexed documents and audio transcriptions:
 
 1. **Select a Collection**:
    - Choose from your existing collections in the sidebar
+   - Collections can contain documents, audio transcriptions, or both!
    - Each collection shows its document count and embedding type
    - Use the 🔄 refresh button to update the list
    - Click 📊 Details to see collection info
@@ -135,8 +199,13 @@ The Chat page is where you interact with your indexed documents:
 
 2. **Ask Questions**:
    - Type your question in the chat input
+   - The app works with both document and audio content seamlessly
+   - Examples:
+     - "What did we discuss in the team meeting?"
+     - "Summarize the key points from the presentation"
+     - "What policies are mentioned in the handbook?"
    - The app will:
-     1. Search for relevant document chunks
+     1. Search for relevant document/audio chunks
      2. Use those chunks as context
      3. Generate an answer using your local LLM
 

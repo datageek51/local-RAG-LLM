@@ -1,0 +1,342 @@
+2026-01-11 19:50:15,365 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_195015.log
+2026-01-11 19:50:18,055 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_195018.log
+2026-01-11 19:50:18,289 - DEBUG - start:359 - Starting component System
+2026-01-11 19:50:18,290 - DEBUG - start:359 - Starting component Posthog
+2026-01-11 19:50:37,048 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_195037.log
+2026-01-11 19:50:41,866 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_195041.log
+2026-01-11 19:50:41,935 - INFO - chat_page:295 - User query: how did the conversation between Cameron Becker and Parker McLean go
+2026-01-11 19:50:41,937 - INFO - chat_page:296 - Active collection: InsuranceDemo1
+2026-01-11 19:50:41,941 - DEBUG - chat_page:308 - Starting document search...
+2026-01-11 19:50:41,942 - DEBUG - chat_page:322 - Querying collection with: how did the conversation between Cameron Becker and Parker McLean go...
+2026-01-11 19:50:42,127 - DEBUG - model:227 - WARNING: No ONNX providers provided, defaulting to available providers: ['AzureExecutionProvider', 'CPUExecutionProvider']
+2026-01-11 19:50:42,393 - DEBUG - chat_page:328 - Query results type: <class 'dict'>
+2026-01-11 19:50:42,393 - DEBUG - chat_page:329 - Query results keys: dict_keys(['ids', 'embeddings', 'documents', 'uris', 'included', 'data', 'metadatas', 'distances'])
+2026-01-11 19:50:42,393 - DEBUG - chat_page:333 - Similarity distances: [[1.4239708185195923, 1.5042173862457275, 1.5726752281188965, 1.7011590003967285]]
+2026-01-11 19:50:42,393 - DEBUG - chat_page:339 - Retrieved docs: 1 items
+2026-01-11 19:50:42,394 - DEBUG - chat_page:348 - Extracted 4 context items from nested list
+2026-01-11 19:50:42,394 - DEBUG - chat_page:351 -   Context item 1 (200 chars): good afternoon and thank you for calling contoso Suites this call is being recorded for quality assurance purposes my name is Cameron Baker how can I assist you today yes hi my name is Parker McLean a...
+2026-01-11 19:50:42,394 - DEBUG - chat_page:351 -   Context item 2 (200 chars): tin  boards  
+12.2. Intranet  posting  
+12.3. On-the-job communication   and meetings  
+ 
+4.13  Internal  communication  is documented.  Information  includes:  topics  
+communicated,  target  audienc...
+2026-01-11 19:50:42,394 - DEBUG - chat_page:351 -   Context item 3 (200 chars): nd I'm calling because I wanted to change some of the details on my upcoming stay thank you for choosing contoso Suites Mr McLean could you please tell me what hotel your reservation is for so I can l...
+2026-01-11 19:50:42,395 - DEBUG - chat_page:351 -   Context item 4 (200 chars): e,  date  of communication,  responsible  person.  
+It is up to the company  to decide  the method  of internal  communication.  It 
+could  be done  through  the use of forms  or methods  such  as des...
+2026-01-11 19:50:42,395 - DEBUG - chat_page:358 - First context item preview: good afternoon and thank you for calling contoso Suites this call is being recorded for quality assurance purposes my name is Cameron Baker how can I assist you today yes hi my name is Parker McLean a...
+2026-01-11 19:50:42,395 - INFO - chat_page:363 - Final context length: 815 characters, 4 items
+2026-01-11 19:50:42,399 - DEBUG - chat_page:394 - RAG prompt length: 1137 characters
+2026-01-11 19:50:42,400 - DEBUG - chat_page:395 - Context included in prompt: 815 characters
+2026-01-11 19:50:42,400 - INFO - chat_page:399 - Using LLM model: gemma:2b
+2026-01-11 19:50:42,401 - DEBUG - chat_page:420 - Trying model: gemma:2b
+2026-01-11 19:50:42,403 - DEBUG - trace:47 - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2026-01-11 19:50:42,404 - DEBUG - trace:47 - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001E620100AD0>
+2026-01-11 19:50:42,405 - DEBUG - trace:47 - send_request_headers.started request=<Request [b'POST']>
+2026-01-11 19:50:42,407 - DEBUG - trace:47 - send_request_headers.complete
+2026-01-11 19:50:42,408 - DEBUG - trace:47 - send_request_body.started request=<Request [b'POST']>
+2026-01-11 19:50:42,409 - DEBUG - trace:47 - send_request_body.complete
+2026-01-11 19:50:42,409 - DEBUG - trace:47 - receive_response_headers.started request=<Request [b'POST']>
+2026-01-11 19:50:58,328 - DEBUG - trace:47 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Mon, 12 Jan 2026 00:50:58 GMT'), (b'Content-Length', b'463')])
+2026-01-11 19:50:58,329 - INFO - _send_single_request:1025 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-11 19:50:58,329 - DEBUG - trace:47 - receive_response_body.started request=<Request [b'POST']>
+2026-01-11 19:50:58,330 - DEBUG - trace:47 - receive_response_body.complete
+2026-01-11 19:50:58,330 - DEBUG - trace:47 - response_closed.started
+2026-01-11 19:50:58,330 - DEBUG - trace:47 - response_closed.complete
+2026-01-11 19:50:58,331 - INFO - chat_page:435 - Successfully got response from model gemma:2b, length: 165 chars
+2026-01-11 19:50:58,331 - DEBUG - chat_page:436 - Response preview: The context does not provide information about the conversation between Cameron Becker and Parker McLean, so I cannot answer this question from the provided context....
+2026-01-11 19:51:58,256 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_195158.log
+2026-01-11 19:51:58,375 - INFO - chat_page:295 - User query: how did the conversation between Cameron Becker and Parker McLean go? only reference the audio transcript in collection
+2026-01-11 19:51:58,376 - INFO - chat_page:296 - Active collection: InsuranceDemo1
+2026-01-11 19:51:58,379 - DEBUG - chat_page:308 - Starting document search...
+2026-01-11 19:51:58,379 - DEBUG - chat_page:322 - Querying collection with: how did the conversation between Cameron Becker and Parker McLean go? only reference the audio trans...
+2026-01-11 19:51:58,413 - DEBUG - model:227 - WARNING: No ONNX providers provided, defaulting to available providers: ['AzureExecutionProvider', 'CPUExecutionProvider']
+2026-01-11 19:51:58,785 - DEBUG - chat_page:328 - Query results type: <class 'dict'>
+2026-01-11 19:51:58,785 - DEBUG - chat_page:329 - Query results keys: dict_keys(['ids', 'embeddings', 'documents', 'uris', 'included', 'data', 'metadatas', 'distances'])
+2026-01-11 19:51:58,785 - DEBUG - chat_page:333 - Similarity distances: [[1.2810014486312866, 1.4156811237335205, 1.5156729221343994, 1.5534685850143433]]
+2026-01-11 19:51:58,786 - DEBUG - chat_page:339 - Retrieved docs: 1 items
+2026-01-11 19:51:58,786 - DEBUG - chat_page:348 - Extracted 4 context items from nested list
+2026-01-11 19:51:58,786 - DEBUG - chat_page:351 -   Context item 1 (200 chars): good afternoon and thank you for calling contoso Suites this call is being recorded for quality assurance purposes my name is Cameron Baker how can I assist you today yes hi my name is Parker McLean a...
+2026-01-11 19:51:58,786 - DEBUG - chat_page:351 -   Context item 2 (200 chars): tin  boards  
+12.2. Intranet  posting  
+12.3. On-the-job communication   and meetings  
+ 
+4.13  Internal  communication  is documented.  Information  includes:  topics  
+communicated,  target  audienc...
+2026-01-11 19:51:58,787 - DEBUG - chat_page:351 -   Context item 3 (200 chars): sidence premises, whether or not it 
+is used with electronic data processing  
+equipment or in a business. Recording or 
+storage media includes, but is not limited to:  
+a) tapes;  
+b) CDs, DVDs and o...
+2026-01-11 19:51:58,787 - DEBUG - chat_page:351 -   Context item 4 (200 chars): COMPANY LOGO Title:  PROCEDURE  FOR TRAINING  AND  INTERNAL  COMMUNICATION  
+ Doc #: QP-1003 Rev #: 0 Release Date:  Released  By:  
+Confidential  and Proprietary  Information
+ 
+Page  
+Printed on 10/2...
+2026-01-11 19:51:58,787 - DEBUG - chat_page:358 - First context item preview: good afternoon and thank you for calling contoso Suites this call is being recorded for quality assurance purposes my name is Cameron Baker how can I assist you today yes hi my name is Parker McLean a...
+2026-01-11 19:51:58,788 - INFO - chat_page:363 - Final context length: 815 characters, 4 items
+2026-01-11 19:51:58,798 - DEBUG - chat_page:394 - RAG prompt length: 1188 characters
+2026-01-11 19:51:58,798 - DEBUG - chat_page:395 - Context included in prompt: 815 characters
+2026-01-11 19:51:58,800 - INFO - chat_page:399 - Using LLM model: gemma:2b
+2026-01-11 19:51:58,800 - DEBUG - chat_page:420 - Trying model: gemma:2b
+2026-01-11 19:51:58,801 - DEBUG - trace:47 - close.started
+2026-01-11 19:51:58,802 - DEBUG - trace:47 - close.complete
+2026-01-11 19:51:58,803 - DEBUG - trace:47 - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2026-01-11 19:51:58,804 - DEBUG - trace:47 - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001E6200B5590>
+2026-01-11 19:51:58,805 - DEBUG - trace:47 - send_request_headers.started request=<Request [b'POST']>
+2026-01-11 19:51:58,806 - DEBUG - trace:47 - send_request_headers.complete
+2026-01-11 19:51:58,806 - DEBUG - trace:47 - send_request_body.started request=<Request [b'POST']>
+2026-01-11 19:51:58,807 - DEBUG - trace:47 - send_request_body.complete
+2026-01-11 19:51:58,810 - DEBUG - trace:47 - receive_response_headers.started request=<Request [b'POST']>
+2026-01-11 19:52:06,158 - DEBUG - trace:47 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Mon, 12 Jan 2026 00:52:06 GMT'), (b'Content-Length', b'451')])
+2026-01-11 19:52:06,159 - INFO - _send_single_request:1025 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-11 19:52:06,160 - DEBUG - trace:47 - receive_response_body.started request=<Request [b'POST']>
+2026-01-11 19:52:06,160 - DEBUG - trace:47 - receive_response_body.complete
+2026-01-11 19:52:06,160 - DEBUG - trace:47 - response_closed.started
+2026-01-11 19:52:06,160 - DEBUG - trace:47 - response_closed.complete
+2026-01-11 19:52:06,161 - INFO - chat_page:435 - Successfully got response from model gemma:2b, length: 155 chars
+2026-01-11 19:52:06,161 - DEBUG - chat_page:436 - Response preview: The context does not provide information about the conversation between Cameron Baker and Parker McLean, so I cannot answer this question from the context....
+2026-01-11 19:52:20,030 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_195220.log
+2026-01-11 19:52:20,165 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_195220.log
+2026-01-11 19:53:10,804 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_195310.log
+2026-01-11 19:53:28,841 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_195328.log
+2026-01-11 19:53:28,920 - INFO - chat_page:295 - User query: how did the conversation between Cameron Becker and Parker McLean go
+2026-01-11 19:53:28,921 - INFO - chat_page:296 - Active collection: InsuranceDemo1
+2026-01-11 19:53:28,923 - DEBUG - chat_page:308 - Starting document search...
+2026-01-11 19:53:28,924 - DEBUG - chat_page:322 - Querying collection with: how did the conversation between Cameron Becker and Parker McLean go...
+2026-01-11 19:53:28,977 - DEBUG - model:227 - WARNING: No ONNX providers provided, defaulting to available providers: ['AzureExecutionProvider', 'CPUExecutionProvider']
+2026-01-11 19:53:29,367 - DEBUG - chat_page:328 - Query results type: <class 'dict'>
+2026-01-11 19:53:29,368 - DEBUG - chat_page:329 - Query results keys: dict_keys(['ids', 'embeddings', 'documents', 'uris', 'included', 'data', 'metadatas', 'distances'])
+2026-01-11 19:53:29,368 - DEBUG - chat_page:333 - Similarity distances: [[1.4239708185195923, 1.5042173862457275, 1.5726752281188965, 1.7011590003967285]]
+2026-01-11 19:53:29,368 - DEBUG - chat_page:339 - Retrieved docs: 1 items
+2026-01-11 19:53:29,369 - DEBUG - chat_page:348 - Extracted 4 context items from nested list
+2026-01-11 19:53:29,369 - DEBUG - chat_page:351 -   Context item 1 (200 chars): good afternoon and thank you for calling contoso Suites this call is being recorded for quality assurance purposes my name is Cameron Baker how can I assist you today yes hi my name is Parker McLean a...
+2026-01-11 19:53:29,369 - DEBUG - chat_page:351 -   Context item 2 (200 chars): tin  boards  
+12.2. Intranet  posting  
+12.3. On-the-job communication   and meetings  
+ 
+4.13  Internal  communication  is documented.  Information  includes:  topics  
+communicated,  target  audienc...
+2026-01-11 19:53:29,369 - DEBUG - chat_page:351 -   Context item 3 (200 chars): nd I'm calling because I wanted to change some of the details on my upcoming stay thank you for choosing contoso Suites Mr McLean could you please tell me what hotel your reservation is for so I can l...
+2026-01-11 19:53:29,370 - DEBUG - chat_page:351 -   Context item 4 (200 chars): e,  date  of communication,  responsible  person.  
+It is up to the company  to decide  the method  of internal  communication.  It 
+could  be done  through  the use of forms  or methods  such  as des...
+2026-01-11 19:53:29,370 - DEBUG - chat_page:358 - First context item preview: good afternoon and thank you for calling contoso Suites this call is being recorded for quality assurance purposes my name is Cameron Baker how can I assist you today yes hi my name is Parker McLean a...
+2026-01-11 19:53:29,370 - INFO - chat_page:363 - Final context length: 815 characters, 4 items
+2026-01-11 19:53:29,375 - DEBUG - chat_page:394 - RAG prompt length: 1137 characters
+2026-01-11 19:53:29,376 - DEBUG - chat_page:395 - Context included in prompt: 815 characters
+2026-01-11 19:53:29,377 - INFO - chat_page:399 - Using LLM model: llama3.2:3b
+2026-01-11 19:53:29,377 - DEBUG - chat_page:420 - Trying model: llama3.2:3b
+2026-01-11 19:53:29,378 - DEBUG - trace:47 - close.started
+2026-01-11 19:53:29,379 - DEBUG - trace:47 - close.complete
+2026-01-11 19:53:29,380 - DEBUG - trace:47 - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2026-01-11 19:53:29,381 - DEBUG - trace:47 - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001E61EFB9F90>
+2026-01-11 19:53:29,382 - DEBUG - trace:47 - send_request_headers.started request=<Request [b'POST']>
+2026-01-11 19:53:29,383 - DEBUG - trace:47 - send_request_headers.complete
+2026-01-11 19:53:29,383 - DEBUG - trace:47 - send_request_body.started request=<Request [b'POST']>
+2026-01-11 19:53:29,384 - DEBUG - trace:47 - send_request_body.complete
+2026-01-11 19:53:29,385 - DEBUG - trace:47 - receive_response_headers.started request=<Request [b'POST']>
+2026-01-11 19:54:24,739 - DEBUG - trace:47 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Mon, 12 Jan 2026 00:54:24 GMT'), (b'Content-Length', b'588')])
+2026-01-11 19:54:24,754 - INFO - _send_single_request:1025 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-11 19:54:24,756 - DEBUG - trace:47 - receive_response_body.started request=<Request [b'POST']>
+2026-01-11 19:54:24,757 - DEBUG - trace:47 - receive_response_body.complete
+2026-01-11 19:54:24,758 - DEBUG - trace:47 - response_closed.started
+2026-01-11 19:54:24,758 - DEBUG - trace:47 - response_closed.complete
+2026-01-11 19:54:24,762 - INFO - chat_page:435 - Successfully got response from model llama3.2:3b, length: 285 chars
+2026-01-11 19:54:24,763 - DEBUG - chat_page:436 - Response preview: The conversation started with a greeting from Cameron Baker, representing Contoso Suites. Parker McLean confirmed his name and requested assistance for changes to his upcoming stay. He asked Cameron t...
+2026-01-11 19:55:45,420 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_195545.log
+2026-01-11 19:55:45,803 - INFO - chat_page:295 - User query: based on conversation can you suggest changes in audit training
+2026-01-11 19:55:45,804 - INFO - chat_page:296 - Active collection: InsuranceDemo1
+2026-01-11 19:55:45,806 - DEBUG - chat_page:308 - Starting document search...
+2026-01-11 19:55:45,806 - DEBUG - chat_page:322 - Querying collection with: based on conversation can you suggest changes in audit training...
+2026-01-11 19:55:45,852 - DEBUG - model:227 - WARNING: No ONNX providers provided, defaulting to available providers: ['AzureExecutionProvider', 'CPUExecutionProvider']
+2026-01-11 19:55:46,394 - DEBUG - chat_page:328 - Query results type: <class 'dict'>
+2026-01-11 19:55:46,394 - DEBUG - chat_page:329 - Query results keys: dict_keys(['ids', 'embeddings', 'documents', 'uris', 'included', 'data', 'metadatas', 'distances'])
+2026-01-11 19:55:46,396 - DEBUG - chat_page:333 - Similarity distances: [[0.768153727054596, 1.0796117782592773, 1.1659917831420898, 1.1805665493011475]]
+2026-01-11 19:55:46,396 - DEBUG - chat_page:339 - Retrieved docs: 1 items
+2026-01-11 19:55:46,397 - DEBUG - chat_page:348 - Extracted 4 context items from nested list
+2026-01-11 19:55:46,397 - DEBUG - chat_page:351 -   Context item 1 (200 chars):  and Preventive  Action)  are carried  out after  
+the audit,  and as needed.  Training  records  are attached  to such  corrective  
+actions.   
+ 
+NOTE:  Where  training  is identified  as a result  ...
+2026-01-11 19:55:46,398 - DEBUG - chat_page:351 -   Context item 2 (200 chars): xisting  employees,  an annual  review  of training  needs  is conducted  by 
+department  head  or the direct  manager,  as applicable.  If new  training  is 
+identified,  the same  is documented  usi...
+2026-01-11 19:55:46,399 - DEBUG - chat_page:351 -   Context item 3 (200 chars): eds  are identified,  QF-006 is used  to 
+document  the training  plan.  
+ 
+6. Effectiveness  of training  is evaluated  through  methods  such  as on-the-job 
+monitoring  and oversight.   
+ 
+7. For e...
+2026-01-11 19:55:46,400 - DEBUG - chat_page:351 -   Context item 4 (200 chars): 0/25 .  Electronically  controlled.  Use latest version.
+ 
+3 of 3 
+ 
+ All records  related  to training  and competence  evaluation  as well as for internal  
+communication  are maintained  per Proced...
+2026-01-11 19:55:46,400 - DEBUG - chat_page:358 - First context item preview:  and Preventive  Action)  are carried  out after  
+the audit,  and as needed.  Training  records  are attached  to such  corrective  
+actions.   
+ 
+NOTE:  Where  training  is identified  as a result  ...
+2026-01-11 19:55:46,400 - INFO - chat_page:363 - Final context length: 815 characters, 4 items
+2026-01-11 19:55:46,408 - DEBUG - chat_page:394 - RAG prompt length: 1132 characters
+2026-01-11 19:55:46,408 - DEBUG - chat_page:395 - Context included in prompt: 815 characters
+2026-01-11 19:55:46,409 - INFO - chat_page:399 - Using LLM model: llama3.2:3b
+2026-01-11 19:55:46,409 - DEBUG - chat_page:420 - Trying model: llama3.2:3b
+2026-01-11 19:55:46,441 - DEBUG - trace:47 - close.started
+2026-01-11 19:55:46,442 - DEBUG - trace:47 - close.complete
+2026-01-11 19:55:46,443 - DEBUG - trace:47 - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2026-01-11 19:55:46,447 - DEBUG - trace:47 - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001E61F3DEFD0>
+2026-01-11 19:55:46,448 - DEBUG - trace:47 - send_request_headers.started request=<Request [b'POST']>
+2026-01-11 19:55:46,450 - DEBUG - trace:47 - send_request_headers.complete
+2026-01-11 19:55:46,450 - DEBUG - trace:47 - send_request_body.started request=<Request [b'POST']>
+2026-01-11 19:55:46,451 - DEBUG - trace:47 - send_request_body.complete
+2026-01-11 19:55:46,451 - DEBUG - trace:47 - receive_response_headers.started request=<Request [b'POST']>
+2026-01-11 19:56:53,023 - DEBUG - trace:47 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Mon, 12 Jan 2026 00:56:53 GMT'), (b'Content-Length', b'636')])
+2026-01-11 19:56:53,024 - INFO - _send_single_request:1025 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-11 19:56:53,026 - DEBUG - trace:47 - receive_response_body.started request=<Request [b'POST']>
+2026-01-11 19:56:53,027 - DEBUG - trace:47 - receive_response_body.complete
+2026-01-11 19:56:53,028 - DEBUG - trace:47 - response_closed.started
+2026-01-11 19:56:53,028 - DEBUG - trace:47 - response_closed.complete
+2026-01-11 19:56:53,029 - INFO - chat_page:435 - Successfully got response from model llama3.2:3b, length: 331 chars
+2026-01-11 19:56:53,033 - DEBUG - chat_page:436 - Response preview: Based on the context, I'd suggest updating the procedure to include:
+
+* Clearly outlining the frequency of annual review of training needs
+* Ensuring that QF-006 is used for all new training documenta...
+2026-01-11 19:59:50,993 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_195950.log
+2026-01-11 19:59:51,128 - INFO - chat_page:295 - User query: explain what is QF-006
+2026-01-11 19:59:51,128 - INFO - chat_page:296 - Active collection: InsuranceDemo1
+2026-01-11 19:59:51,131 - DEBUG - chat_page:308 - Starting document search...
+2026-01-11 19:59:51,131 - DEBUG - chat_page:322 - Querying collection with: explain what is QF-006...
+2026-01-11 19:59:51,173 - DEBUG - model:227 - WARNING: No ONNX providers provided, defaulting to available providers: ['AzureExecutionProvider', 'CPUExecutionProvider']
+2026-01-11 19:59:51,530 - DEBUG - chat_page:328 - Query results type: <class 'dict'>
+2026-01-11 19:59:51,531 - DEBUG - chat_page:329 - Query results keys: dict_keys(['ids', 'embeddings', 'documents', 'uris', 'included', 'data', 'metadatas', 'distances'])
+2026-01-11 19:59:51,531 - DEBUG - chat_page:333 - Similarity distances: [[1.0699485540390015, 1.0909087657928467, 1.1705434322357178, 1.1970385313034058]]
+2026-01-11 19:59:51,531 - DEBUG - chat_page:339 - Retrieved docs: 1 items
+2026-01-11 19:59:51,532 - DEBUG - chat_page:348 - Extracted 4 context items from nested list
+2026-01-11 19:59:51,532 - DEBUG - chat_page:351 -   Context item 1 (200 chars): eds  are identified,  QF-006 is used  to 
+document  the training  plan.  
+ 
+6. Effectiveness  of training  is evaluated  through  methods  such  as on-the-job 
+monitoring  and oversight.   
+ 
+7. For e...
+2026-01-11 19:59:51,532 - DEBUG - chat_page:351 -   Context item 2 (200 chars): of document  changes  or corrective  
+actions  or on-going  process  changes,  a separate  training  plan  using  QF-006 is 
+not required.  
+ 
+11. Copy  of individual  training  plans  and records  wi...
+2026-01-11 19:59:51,532 - DEBUG - chat_page:351 -   Context item 3 (200 chars): ure  for Control  of Records,  QP-1002.  
+  
+5.0 REFERENCES  
+ 
+1. QF-006,  Training  Plan  
+2. QF-007,  Training  Record    
+3. QP 1001,  Procedure  for Document  Control   
+4. QP-1002,  Procedure  f...
+2026-01-11 19:59:51,533 - DEBUG - chat_page:351 -   Context item 4 (200 chars): COMPANY LOGO Title:  PROCEDURE  FOR TRAINING  AND  INTERNAL  COMMUNICATION  
+ Doc #: QP-1003 Rev #: 0 Release Date:  Released  By:  
+Confidential  and Proprietary  Information
+ 
+Page  
+Printed on 10/2...
+2026-01-11 19:59:51,533 - DEBUG - chat_page:358 - First context item preview: eds  are identified,  QF-006 is used  to 
+document  the training  plan.  
+ 
+6. Effectiveness  of training  is evaluated  through  methods  such  as on-the-job 
+monitoring  and oversight.   
+ 
+7. For e...
+2026-01-11 19:59:51,533 - INFO - chat_page:363 - Final context length: 815 characters, 4 items
+2026-01-11 19:59:51,545 - DEBUG - chat_page:394 - RAG prompt length: 1091 characters
+2026-01-11 19:59:51,545 - DEBUG - chat_page:395 - Context included in prompt: 815 characters
+2026-01-11 19:59:51,546 - INFO - chat_page:399 - Using LLM model: llama3.2:3b
+2026-01-11 19:59:51,546 - DEBUG - chat_page:420 - Trying model: llama3.2:3b
+2026-01-11 19:59:51,556 - DEBUG - trace:47 - close.started
+2026-01-11 19:59:51,558 - DEBUG - trace:47 - close.complete
+2026-01-11 19:59:51,559 - DEBUG - trace:47 - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2026-01-11 19:59:51,561 - DEBUG - trace:47 - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001E61F3DF360>
+2026-01-11 19:59:51,562 - DEBUG - trace:47 - send_request_headers.started request=<Request [b'POST']>
+2026-01-11 19:59:51,563 - DEBUG - trace:47 - send_request_headers.complete
+2026-01-11 19:59:51,564 - DEBUG - trace:47 - send_request_body.started request=<Request [b'POST']>
+2026-01-11 19:59:51,565 - DEBUG - trace:47 - send_request_body.complete
+2026-01-11 19:59:51,565 - DEBUG - trace:47 - receive_response_headers.started request=<Request [b'POST']>
+2026-01-11 20:00:08,677 - DEBUG - trace:47 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Mon, 12 Jan 2026 01:00:08 GMT'), (b'Content-Length', b'389')])
+2026-01-11 20:00:08,682 - INFO - _send_single_request:1025 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-11 20:00:08,683 - DEBUG - trace:47 - receive_response_body.started request=<Request [b'POST']>
+2026-01-11 20:00:08,684 - DEBUG - trace:47 - receive_response_body.complete
+2026-01-11 20:00:08,684 - DEBUG - trace:47 - response_closed.started
+2026-01-11 20:00:08,685 - DEBUG - trace:47 - response_closed.complete
+2026-01-11 20:00:08,687 - INFO - chat_page:435 - Successfully got response from model llama3.2:3b, length: 86 chars
+2026-01-11 20:00:08,688 - DEBUG - chat_page:436 - Response preview: QF-006 refers to the "Training Plan" document, as indicated in section 5.0 REFERENCES....
+2026-01-11 20:02:47,043 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_200247.log
+2026-01-11 20:02:50,344 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_200250.log
+2026-01-11 20:02:50,492 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_200250.log
+2026-01-11 20:02:58,533 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_200258.log
+2026-01-11 20:02:58,607 - INFO - chat_page:295 - User query: summarize your data
+2026-01-11 20:02:58,608 - INFO - chat_page:296 - Active collection: AuditDocs
+2026-01-11 20:02:58,612 - DEBUG - chat_page:308 - Starting document search...
+2026-01-11 20:02:58,613 - DEBUG - chat_page:322 - Querying collection with: summarize your data...
+2026-01-11 20:02:58,659 - DEBUG - model:227 - WARNING: No ONNX providers provided, defaulting to available providers: ['AzureExecutionProvider', 'CPUExecutionProvider']
+2026-01-11 20:02:59,055 - DEBUG - chat_page:328 - Query results type: <class 'dict'>
+2026-01-11 20:02:59,055 - DEBUG - chat_page:329 - Query results keys: dict_keys(['ids', 'embeddings', 'documents', 'uris', 'included', 'data', 'metadatas', 'distances'])
+2026-01-11 20:02:59,055 - DEBUG - chat_page:333 - Similarity distances: [[1.5890097618103027, 1.7002015113830566, 1.7195453643798828, 1.7328417301177979]]
+2026-01-11 20:02:59,055 - DEBUG - chat_page:339 - Retrieved docs: 1 items
+2026-01-11 20:02:59,056 - DEBUG - chat_page:348 - Extracted 4 context items from nested list
+2026-01-11 20:02:59,056 - DEBUG - chat_page:351 -   Context item 1 (200 chars):  
+4.3. Applicable  Job description  
+4.4. Individual  training  records  (Ref.  form  QF-007)  
+4.5. Job acceptance  document  (e.g.  offer  letter)  
+4.6. Benefits  information  (401K,  Health  insur...
+2026-01-11 20:02:59,056 - DEBUG - chat_page:351 -   Context item 2 (200 chars): on  which  includes  the following  topics  (at a minimum):  
+3.1. Quality  policy  
+3.2. Current  quality  objectives  
+3.3. Relevant  procedures  (as applicable  to the activities  of the employee) ...
+2026-01-11 20:02:59,056 - DEBUG - chat_page:351 -   Context item 3 (200 chars): COMPANY LOGO Title:  PROCEDURE  FOR TRAINING  AND  INTERNAL  COMMUNICATION  
+ Doc #: QP-1003 Rev #: 0 Release Date:  Released  By:  
+Confidential  and Proprietary  Information
+ 
+Page  
+Printed on 10/2...
+2026-01-11 20:02:59,057 - DEBUG - chat_page:351 -   Context item 4 (200 chars): e,  date  of communication,  responsible  person.  
+It is up to the company  to decide  the method  of internal  communication.  It 
+could  be done  through  the use of forms  or methods  such  as des...
+2026-01-11 20:02:59,057 - DEBUG - chat_page:358 - First context item preview:  
+4.3. Applicable  Job description  
+4.4. Individual  training  records  (Ref.  form  QF-007)  
+4.5. Job acceptance  document  (e.g.  offer  letter)  
+4.6. Benefits  information  (401K,  Health  insur...
+2026-01-11 20:02:59,057 - INFO - chat_page:363 - Final context length: 815 characters, 4 items
+2026-01-11 20:02:59,063 - DEBUG - chat_page:394 - RAG prompt length: 1088 characters
+2026-01-11 20:02:59,063 - DEBUG - chat_page:395 - Context included in prompt: 815 characters
+2026-01-11 20:02:59,064 - INFO - chat_page:399 - Using LLM model: llama3.2:3b
+2026-01-11 20:02:59,065 - DEBUG - chat_page:420 - Trying model: llama3.2:3b
+2026-01-11 20:02:59,066 - DEBUG - trace:47 - close.started
+2026-01-11 20:02:59,067 - DEBUG - trace:47 - close.complete
+2026-01-11 20:02:59,068 - DEBUG - trace:47 - connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2026-01-11 20:02:59,070 - DEBUG - trace:47 - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001E6200D5370>
+2026-01-11 20:02:59,071 - DEBUG - trace:47 - send_request_headers.started request=<Request [b'POST']>
+2026-01-11 20:02:59,071 - DEBUG - trace:47 - send_request_headers.complete
+2026-01-11 20:02:59,072 - DEBUG - trace:47 - send_request_body.started request=<Request [b'POST']>
+2026-01-11 20:02:59,072 - DEBUG - trace:47 - send_request_body.complete
+2026-01-11 20:02:59,073 - DEBUG - trace:47 - receive_response_headers.started request=<Request [b'POST']>
+2026-01-11 20:04:08,806 - DEBUG - trace:47 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Mon, 12 Jan 2026 01:04:08 GMT'), (b'Content-Length', b'708')])
+2026-01-11 20:04:08,807 - INFO - _send_single_request:1025 - HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-11 20:04:08,808 - DEBUG - trace:47 - receive_response_body.started request=<Request [b'POST']>
+2026-01-11 20:04:08,808 - DEBUG - trace:47 - receive_response_body.complete
+2026-01-11 20:04:08,808 - DEBUG - trace:47 - response_closed.started
+2026-01-11 20:04:08,809 - DEBUG - trace:47 - response_closed.complete
+2026-01-11 20:04:08,809 - INFO - chat_page:435 - Successfully got response from model llama3.2:3b, length: 397 chars
+2026-01-11 20:04:08,810 - DEBUG - chat_page:436 - Response preview: This document outlines procedures for training and internal communication, including:
+
+1. Job description
+2. Individual training records (QF-007)
+3. Job acceptance documents (offer letter)
+4. Benefits...
+2026-01-11 20:05:16,611 - INFO - <module>:24 - Application started. Log file: logs\app_20260111_200516.log

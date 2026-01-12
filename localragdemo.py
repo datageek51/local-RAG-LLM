@@ -2,7 +2,26 @@ import streamlit as st
 import PyPDF2
 from Utilities import * 
 import os
+import logging
+from datetime import datetime
 os.environ["ANONYMIZED_TELEMETRY"] = "False"
+
+# Configure logging
+log_dir = "logs"
+os.makedirs(log_dir, exist_ok=True)
+log_file = os.path.join(log_dir, f"app_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log")
+
+logging.basicConfig(
+    level=logging.DEBUG,
+    format='%(asctime)s - %(levelname)s - %(funcName)s:%(lineno)d - %(message)s',
+    handlers=[
+        logging.FileHandler(log_file),
+        logging.StreamHandler()  # Also print to console
+    ]
+)
+
+logger = logging.getLogger(__name__)
+logger.info(f"Application started. Log file: {log_file}")
 
 import ollama
 try:
@@ -10,6 +29,7 @@ try:
 except Exception:
     chromadb = None
 from chat_page import chat_page  # import the chat interface
+from audio_page import audio_processing_page  # import the audio processing page
 
 
 # Note: previously there was a compatibility wrapper for rerun here.
@@ -30,6 +50,17 @@ def show_debug_panel():
             st.text("ChromaDB: not installed")
         st.text(f"Ollama Available: {hasattr(ollama, 'chat')}")
         
+        st.markdown("### Logging")
+        st.text(f"Log file: {log_file}")
+        if st.button("View Recent Logs (last 50 lines)"):
+            try:
+                with open(log_file, 'r') as f:
+                    lines = f.readlines()
+                    recent_lines = lines[-50:] if len(lines) > 50 else lines
+                    st.text_area("Recent Log Entries", ''.join(recent_lines), height=300)
+            except Exception as e:
+                st.error(f"Could not read log file: {e}")
+        
         st.markdown("### Session State")
         st.json(dict(st.session_state))
         
@@ -37,6 +68,7 @@ def show_debug_panel():
         st.text(f"ANONYMIZED_TELEMETRY: {os.environ.get('ANONYMIZED_TELEMETRY', 'Not Set')}")
         
         if st.button("Clear Session State"):
+            logger.info("Session state cleared by user")
             for key in list(st.session_state.keys()):
                 del st.session_state[key]
             try:
@@ -61,6 +93,69 @@ def document_processing_page():
 
     # add a key so we can clear the uploader programmatically via session_state
     uploaded_doc = st.file_uploader("Upload Document File (PDF)", type=['pdf'], key='uploaded_doc')
+
+    # Option to split PDF into smaller files
+    split_pdf_option = st.checkbox("Split PDF into smaller files", value=False)
+    
+    if split_pdf_option:
+        pages_per_file = st.number_input("Pages per file:", min_value=1, max_value=1000, value=10, step=1)
+    
+    if split_pdf_option and uploaded_doc is not None:
+        st.info(f"📄 Split mode: The PDF will be split into multiple files with {pages_per_file} pages each before processing.")
+        if st.button("Split PDF and Save Files"):
+            with st.spinner('Splitting PDF...'):
+                from PyPDF2 import PdfReader, PdfWriter
+                import os
+                
+                try:
+                    reader = PdfReader(uploaded_doc)
+                    total_pages = len(reader.pages)
+                    
+                    # Calculate number of splits
+                    num_splits = (total_pages + pages_per_file - 1) // pages_per_file
+                    
+                    # Get original filename without extension
+                    original_filename = uploaded_doc.name
+                    base_name = os.path.splitext(original_filename)[0]
+                    
+                    # Create output directory if it doesn't exist
+                    output_dir = "split_pdfs"
+                    os.makedirs(output_dir, exist_ok=True)
+                    
+                    split_files = []
+                    
+                    # Split the PDF
+                    for split_num in range(1, num_splits + 1):
+                        writer = PdfWriter()
+                        
+                        # Calculate page range for this split
+                        start_page = (split_num - 1) * pages_per_file
+                        end_page = min(split_num * pages_per_file, total_pages)
+                        
+                        # Add pages to this split
+                        for page_num in range(start_page, end_page):
+                            writer.add_page(reader.pages[page_num])
+                        
+                        # Generate output filename
+                        output_filename = f"{base_name}-{split_num}.pdf"
+                        output_path = os.path.join(output_dir, output_filename)
+                        
+                        # Write the split PDF
+                        with open(output_path, 'wb') as output_file:
+                            writer.write(output_file)
+                        
+                        split_files.append(output_filename)
+                    
+                    st.success(f"✅ Successfully split {total_pages} pages into {num_splits} PDF files!")
+                    st.markdown(f"**Files saved in `{output_dir}/` folder:**")
+                    for file in split_files:
+                        st.text(f"  • {file}")
+                    
+                except Exception as e:
+                    logger.error(f"Failed to split PDF: {str(e)}", exc_info=True)
+                    st.error(f"Failed to split PDF: {e}")
+        
+        st.markdown("---")
 
     # Metadata inputs for this document (applied to all chunks extracted from the uploaded file)
     st.markdown("**Document metadata (applies to all extracted chunks):**")
@@ -153,65 +248,113 @@ def document_processing_page():
         if st.button("Extract Text and Process Document", disabled=disable_process):
             with st.spinner('Extracting text from PDF...'):
                 from PyPDF2 import PdfReader
-                reader = PdfReader(uploaded_doc)
-
-                # Collect chunks from all pages
-                documents = []
-                for page in reader.pages:
-                    page_text = page.extract_text()
-                    if page_text:
-                        # Chunk each page and extend the documents list
-                        chunks = fixed_size_chunking(page_text, 200)
-                        documents.extend(chunks)
-
-                if not documents:
-                    st.warning("No text could be extracted from the uploaded PDF.")
-                else:
-                    st.info(f"Extracted {len(documents)} text chunks. Processing with ChromaDB...")
+                
+                logger.info(f"Starting text extraction for file: {uploaded_doc.name}")
+                logger.debug(f"File size: {uploaded_doc.size} bytes")
+                logger.debug(f"Collection name: {chosen_collection_name}")
+                logger.debug(f"Metadata - Source: {doc_source}, Category: {doc_category}")
+                
+                try:
+                    # Reset file pointer to beginning
+                    uploaded_doc.seek(0)
+                    logger.debug("File pointer reset to beginning before reading")
                     
-                    # Progress bar for batch processing
-                    progress_bar = st.progress(0)
-                    status_text = st.empty()
+                    reader = PdfReader(uploaded_doc)
+                    total_pages = len(reader.pages)
+                    logger.info(f"PDF loaded. Total pages: {total_pages}")
 
-                    def update_progress(current: int, total: int):
-                        progress = float(current) / float(total) if total > 0 else 0
-                        progress_bar.progress(progress)
-                        status_text.text(f"Processing chunks: {current}/{total}")
+                    # Collect chunks from all pages
+                    documents = []
+                    for page_idx, page in enumerate(reader.pages):
+                        logger.debug(f"Processing page {page_idx + 1}/{total_pages}")
+                        try:
+                            page_text = page.extract_text()
+                            text_length = len(page_text) if page_text else 0
+                            logger.debug(f"Page {page_idx + 1}: extracted {text_length} characters")
+                            
+                            if page_text:
+                                # Log first 100 chars of extracted text for debugging
+                                logger.debug(f"Page {page_idx + 1} text preview: {page_text[:100]}...")
+                                
+                                # Chunk each page and extend the documents list
+                                chunks = fixed_size_chunking(page_text, 500)
+                                logger.debug(f"Page {page_idx + 1}: created {len(chunks)} chunks")
+                                documents.extend(chunks)
+                            else:
+                                logger.warning(f"Page {page_idx + 1}: No text extracted (empty page or image-only)")
+                        except Exception as page_error:
+                            logger.error(f"Error processing page {page_idx + 1}: {str(page_error)}", exc_info=True)
 
-                    try:
-                        # Initialize or get ChromaDB collection with progress tracking
-                        # Create a metadata dict to attach to each chunk
-                        doc_meta = {}
-                        if doc_source:
-                            doc_meta['source'] = doc_source
-                        if doc_category:
-                            doc_meta['category'] = doc_category
-
-                        collection = initialize_chroma_db(
-                            documents=documents,
-                            batch_size=10,  # process 10 docs at a time
-                            progress_callback=update_progress,
-                            document_metadata=doc_meta if doc_meta else None,
-                            collection_name=chosen_collection_name
-                        )
-                        progress_bar.progress(1.0)  # ensure bar shows complete
-                        status_text.text(f"Successfully processed all {len(documents)} chunks!")
+                    logger.info(f"Text extraction complete. Total chunks created: {len(documents)}")
+                    
+                    if not documents:
+                        logger.warning("No text could be extracted from any page of the PDF")
+                        st.warning("No text could be extracted from the uploaded PDF.")
+                        st.info("💡 This may happen if the PDF contains only images or scanned content. Try a text-based PDF.")
+                    else:
+                        st.info(f"Extracted {len(documents)} text chunks. Processing with ChromaDB...")
+                        logger.info(f"Starting ChromaDB processing for {len(documents)} chunks")
                         
-                        # Store collection in session state for chat page
-                        st.session_state['chroma_collection'] = collection
-                        st.session_state['doc_processed'] = True
+                        # Progress bar for batch processing
+                        progress_bar = st.progress(0)
+                        status_text = st.empty()
 
-                        # Preview the first few chunks
-                        with st.expander("Document chunks preview (first 5)", expanded=False):
-                            for i, chunk in enumerate(documents[:5]):
-                                st.text(f"Chunk {i}:")
-                                st.text(chunk[:500] + "..." if len(chunk) > 500 else chunk)
-                        
-                        # Add a button to navigate to chat
-                        col1, col2 = st.columns(2)
-                        with col1:
-                            if st.button("Go to Chat"):
-                                    # trigger a rerun so user can select Chat from the sidebar
+                        def update_progress(current: int, total: int):
+                            progress = float(current) / float(total) if total > 0 else 0
+                            progress_bar.progress(progress)
+                            status_text.text(f"Processing chunks: {current}/{total}")
+                            logger.debug(f"Progress: {current}/{total} chunks processed")
+
+                        try:
+                            # Initialize or get ChromaDB collection with progress tracking
+                            # Create a metadata dict to attach to each chunk
+                            doc_meta = {}
+                            if doc_source:
+                                doc_meta['source'] = doc_source
+                            if doc_category:
+                                doc_meta['category'] = doc_category
+                            
+                            logger.debug(f"Document metadata: {doc_meta}")
+
+                            collection = initialize_chroma_db(
+                                documents=documents,
+                                batch_size=10,  # process 10 docs at a time
+                                progress_callback=update_progress,
+                                document_metadata=doc_meta if doc_meta else None,
+                                collection_name=chosen_collection_name
+                            )
+                            logger.info(f"ChromaDB processing complete. Collection: {chosen_collection_name}")
+                            
+                            progress_bar.progress(1.0)  # ensure bar shows complete
+                            status_text.text(f"Successfully processed all {len(documents)} chunks!")
+                            
+                            # Store collection in session state for chat page
+                            st.session_state['chroma_collection'] = collection
+                            st.session_state['doc_processed'] = True
+                            logger.debug("Session state updated with collection and doc_processed flag")
+
+                            # Preview the first few chunks
+                            with st.expander("Document chunks preview (first 5)", expanded=False):
+                                for i, chunk in enumerate(documents[:5]):
+                                    st.text(f"Chunk {i}:")
+                                    st.text(chunk[:500] + "..." if len(chunk) > 500 else chunk)
+                            
+                            # Add a button to navigate to chat
+                            col1, col2 = st.columns(2)
+                            with col1:
+                                if st.button("Go to Chat"):
+                                        # trigger a rerun so user can select Chat from the sidebar
+                                        try:
+                                            st.experimental_rerun()
+                                        except Exception:
+                                            try:
+                                                st.rerun()
+                                            except Exception:
+                                                raise RuntimeError('Streamlit rerun API not available. Please upgrade Streamlit.')
+                            with col2:
+                                if st.button("Clear & Upload Another"):
+                                    st.session_state['uploaded_doc'] = None
+                                    st.session_state['doc_processed'] = False
                                     try:
                                         st.experimental_rerun()
                                     except Exception:
@@ -219,8 +362,12 @@ def document_processing_page():
                                             st.rerun()
                                         except Exception:
                                             raise RuntimeError('Streamlit rerun API not available. Please upgrade Streamlit.')
-                        with col2:
-                            if st.button("Clear & Upload Another"):
+
+                        except Exception as e:
+                            logger.error(f"Failed to process documents: {str(e)}", exc_info=True)
+                            st.error(f"Failed to process documents: {e}")
+                            if st.button("Clear & Try Again"):
+                                logger.info("User clicked 'Clear & Try Again'")
                                 st.session_state['uploaded_doc'] = None
                                 st.session_state['doc_processed'] = False
                                 try:
@@ -230,19 +377,11 @@ def document_processing_page():
                                         st.rerun()
                                     except Exception:
                                         raise RuntimeError('Streamlit rerun API not available. Please upgrade Streamlit.')
-
-                    except Exception as e:
-                        st.error(f"Failed to process documents: {e}")
-                        if st.button("Clear & Try Again"):
-                            st.session_state['uploaded_doc'] = None
-                            st.session_state['doc_processed'] = False
-                            try:
-                                st.experimental_rerun()
-                            except Exception:
-                                try:
-                                    st.rerun()
-                                except Exception:
-                                    raise RuntimeError('Streamlit rerun API not available. Please upgrade Streamlit.')
+                
+                except Exception as outer_e:
+                    logger.error(f"Unexpected error during PDF processing: {str(outer_e)}", exc_info=True)
+                    st.error(f"Unexpected error: {outer_e}")
+                    st.info("Check the log file for detailed error information.")
 
 # Main screen navigation
 def main():
@@ -250,6 +389,7 @@ def main():
     choice = st.sidebar.radio("Select Processing Type:", [
         "🏠 Home", 
         "📄 Document Processing",
+        "🎤 Audio Processing",
         "💬 Chat"
     ])
     
@@ -263,10 +403,13 @@ def main():
 
         Choose from the sidebar:
         - **Document Processing**: Add documents to the knowledge base.
-        - **Chat**: Ask questions about your processed documents.
+        - **Audio Processing**: Transcribe and add audio files to the knowledge base.
+        - **Chat**: Ask questions about your processed documents and audio.
         """)
     elif choice == "📄 Document Processing" or choice == "Document Processing":
         document_processing_page()
+    elif choice == "🎤 Audio Processing" or choice == "Audio Processing":
+        audio_processing_page()
     elif choice == "💬 Chat" or choice == "Chat":
         # Pass the ChromaDB collection if documents have been processed
         collection = st.session_state.get('chroma_collection')
