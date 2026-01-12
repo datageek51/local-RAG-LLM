@@ -53,3 +53,6 @@ Thumbs.db
 
 # Ignore log files
 logs/
+
+# Ignore splits_pdf directory
+splits_pdf/
