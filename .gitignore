@@ -51,3 +51,5 @@ Thumbs.db
 # Streamlit cache
 .streamlit/
 
+# Ignore log files
+logs/
