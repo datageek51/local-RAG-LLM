@@ -1,5 +1,7 @@
 # local-RAG-LLM
 
+Navin's collabration with AI as part of the Vibe coding
+
 A lightweight Retrieval-Augmented Generation (RAG) demo for local document Q&A:
 
 - **Fast Setup**: Uses Streamlit for the UI and runs completely locally
