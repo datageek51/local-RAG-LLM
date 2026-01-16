@@ -356,7 +356,7 @@ def audio_processing_page():
                     
                     # Chunk the transcription text for ChromaDB
                     st.info("Processing transcription into text chunks...")
-                    text_chunks = fixed_size_chunking(full_transcription, 200)
+                    text_chunks = fixed_size_chunking(full_transcription, 1500)
                     logger.info(f"Created {len(text_chunks)} text chunks for storage")
                     
                     # Prepare metadata
@@ -406,7 +406,7 @@ def audio_processing_page():
                     with st.expander("Text chunks preview (first 5)", expanded=False):
                         for i, chunk in enumerate(text_chunks[:5]):
                             st.text(f"Chunk {i}:")
-                            st.text(chunk[:500] + "..." if len(chunk) > 500 else chunk)
+                            st.text(chunk[:1500] + "..." if len(chunk) > 1500 else chunk)
                     
                     # Navigation buttons
                     col1, col2 = st.columns(2)

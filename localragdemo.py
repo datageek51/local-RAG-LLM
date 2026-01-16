@@ -277,7 +277,7 @@ def document_processing_page():
                                 logger.debug(f"Page {page_idx + 1} text preview: {page_text[:100]}...")
                                 
                                 # Chunk each page and extend the documents list
-                                chunks = fixed_size_chunking(page_text, 500)
+                                chunks = fixed_size_chunking(page_text, 2000)
                                 logger.debug(f"Page {page_idx + 1}: created {len(chunks)} chunks")
                                 documents.extend(chunks)
                             else:
@@ -337,7 +337,7 @@ def document_processing_page():
                             with st.expander("Document chunks preview (first 5)", expanded=False):
                                 for i, chunk in enumerate(documents[:5]):
                                     st.text(f"Chunk {i}:")
-                                    st.text(chunk[:500] + "..." if len(chunk) > 500 else chunk)
+                                    st.text(chunk[:2500] + "..." if len(chunk) > 2500 else chunk)
                             
                             # Add a button to navigate to chat
                             col1, col2 = st.columns(2)

@@ -348,14 +348,14 @@ def chat_page(collection=None):
                         logger.debug(f"Extracted {len(context_items)} context items from nested list")
                         # Log each retrieved document snippet
                         for idx, item in enumerate(context_items):
-                            logger.debug(f"  Context item {idx + 1} ({len(item)} chars): {item[:500]}...")
+                            logger.debug(f"  Context item {idx + 1} ({len(item)} chars): {item[:2500]}...")
                     else:
                         context_items = [str(first)]
                         logger.debug(f"Extracted 1 context item")
                     
                     # Log first context item preview
                     if context_items:
-                        logger.debug(f"First context item preview: {context_items[0][:500]}...")
+                        logger.debug(f"First context item preview: {context_items[0][:2500]}...")
                 else:
                     logger.warning("No documents retrieved from query")
 
@@ -380,7 +380,7 @@ def chat_page(collection=None):
         with st.spinner("Generating response..."):
             try:
                 rag_prompt = f"""
-You are a helpful but concise assistant. Keep responses short and focused.
+You are a helpful assistant. Keep responses short and focused.
 Only use information from the context to answer. If unsure, say "I don't have enough context."
 Avoid long explanations - be direct and brief.
 
